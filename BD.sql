@@ -1,11 +1,13 @@
 CREATE DATABASE myframecg;
 
+USE myframecg;
+
 CREATE TABLE cliente (
   cliente_id SERIAL PRIMARY KEY,
   nome VARCHAR(255) NOT NULL UNIQUE,
   email VARCHAR(255) DEFAULT NULL,
-  whats_app INT NOT NULL,
-  localidade VARCHAR(255) DEFAULT NULL,
+  whats_app INT DEFAULT NULL,
+  localidade VARCHAR(255) DEFAULT NULL
 );
 
 CREATE TABLE produto(
