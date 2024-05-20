@@ -13,7 +13,9 @@ CREATE TABLE cliente (
 CREATE TABLE produto(
     produto_id SERIAL PRIMARY KEY,
     nome VARCHAR(255) NOT NULL,
+    quantidade INT NOT NULL,
     valor DECIMAL(10,2) NOT NULL,
+    data_aquisicao DATE NOT NULL,
     descricao VARCHAR(255) DEFAULT NULL
 );
 
