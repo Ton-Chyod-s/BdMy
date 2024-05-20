@@ -29,11 +29,9 @@ CREATE TABLE despesas_venda(
     despesas_id SERIAL PRIMARY KEY,
     venda_id INT NOT NULL,
     cliente_id INT NOT NULL,
-
     transporte DECIMAL(10,2) DEFAULT NULL,
     impressao DECIMAL(10,2) DEFAULT NULL,
     outros DECIMAL(10,2) DEFAULT NULL,
-
     FOREIGN KEY (cliente_ID) REFERENCES cliente(cliente_id),
     FOREIGN KEY (venda_id) REFERENCES venda(venda_id)
 )
