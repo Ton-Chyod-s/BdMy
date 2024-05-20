@@ -13,7 +13,7 @@ CREATE TABLE produto(
     nome VARCHAR(255) NOT NULL,
     valor DECIMAL(10,2) NOT NULL,
     descricao VARCHAR(255) DEFAULT NULL
-)
+);
 
 CREATE TABLE venda(
     venda_id SERIAL PRIMARY KEY,
@@ -23,7 +23,7 @@ CREATE TABLE venda(
     data DATE NOT NULL,
     FOREIGN KEY (cliente_id) REFERENCES cliente(cliente_id),
     FOREIGN KEY (produto_id) REFERENCES produto(produto_id)
-)
+);
 
 CREATE TABLE despesas_venda(
     despesas_id SERIAL PRIMARY KEY,
@@ -34,4 +34,4 @@ CREATE TABLE despesas_venda(
     outros DECIMAL(10,2) DEFAULT NULL,
     FOREIGN KEY (cliente_ID) REFERENCES cliente(cliente_id),
     FOREIGN KEY (venda_id) REFERENCES venda(venda_id)
-)
+);
