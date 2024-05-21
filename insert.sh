@@ -1,6 +1,3 @@
-import 'arquivosCSV/DESPESAS.csv' as DESPESAS
-import 'arquivosCSV/VENDA.csv' as VENDA
-
 export PGPASSWORD=postgres
 PSQL="psql -U postgres -t --no-align"
 # PSQL="--username=postgres --dbname=myframecg -t --no-align -c";
@@ -10,4 +7,4 @@ echo "$($PSQL)"
 
 # echo "$($PSQL "TRUNCATE TABLE cliente, produto")"
 
-# cat games.csv | while IFS="," read YEAR ROUND WINNER OPPONENT WINNER_GOALS OPPONENT_GOALS; 
+# cat arquivosCSV/VENDAS.csv | while IFS="," read NOME PRODUTO QTDE VALOR UBER FLASH IMPRESS�O DATA PRAZO SITUA��O STATUS OBS ; 
