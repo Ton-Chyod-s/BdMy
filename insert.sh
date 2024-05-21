@@ -1,3 +1,5 @@
+import 'arquivosCSV/DESPESAS.csv' as DESPESAS
+import 'arquivosCSV/VENDA.csv' as VENDA
 
 export PGPASSWORD=postgres
 PSQL="psql -U postgres -t --no-align"
