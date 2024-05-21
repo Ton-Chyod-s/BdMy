@@ -1,6 +1,6 @@
 export PGPASSWORD=postgres
-#PSQL="psql -U postgres -t --no-align"
-PSQL="--username=postgres --dbname=myframecg -t --no-align -c";
+PSQL="psql -U postgres -t --no-align"
+# PSQL="--username=postgres --dbname=myframecg -t --no-align -c";
 echo "$($PSQL)"
 
 # Do not change code above this line. Use the PSQL variable above to query your database.
