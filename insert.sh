@@ -1,3 +1,5 @@
+from arquivosCSV import 
+
 export PGPASSWORD=postgres
 PSQL="psql -U postgres -t --no-align"
 # PSQL="--username=postgres --dbname=myframecg -t --no-align -c";
