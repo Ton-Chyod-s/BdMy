@@ -8,7 +8,7 @@ echo "$($PSQL)"
 # echo "$($PSQL "TRUNCATE TABLE cliente, produto")"
 
 # cat arquivosCSV/DESPESAS.csv | while IFS="," read NOME_LOJA PRODUTO QTDE VALOR DATA ENTREGA; do
-
+    
 
 # done
 
