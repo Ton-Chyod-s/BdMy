@@ -1,4 +1,3 @@
-from arquivosCSV import 
 
 export PGPASSWORD=postgres
 PSQL="psql -U postgres -t --no-align"
