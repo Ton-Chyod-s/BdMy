@@ -1,4 +1,4 @@
-#! %windir%\system32\cmd.exe
+#! /bin/bash
 
 PSQL="psql --username=postgres --dbname=myframecg -t --no-align"
 
