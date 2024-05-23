@@ -2,13 +2,8 @@ PSQL="psql -U postgres -t --no-align"
 
 BANCODEDADOS="$($PSQL -c "select datname from pg_database;")"
 
+echo "$BANCODEDADOS"
 
-while IFS=" " read -r BANCO; do
-    if [[ $BANCO != 'postgres' ]]
-    then
-        echo $BANCO
-    fi
-done 
 
 # cat arquivosCSV/DESPESAS.csv | while IFS="," read -r NOME_LOJA PRODUTO QUANTIDADE VALOR DATA ENTREGA; do
 #     if [[ $QUANTIDADE != 'QUANTIDADE' ]]
