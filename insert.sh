@@ -1,10 +1,15 @@
 PSQL="psql -U postgres -d myframecg -t --no-align"
 
-echo "$($PSQL -c 'drop table produto, cliente;')"
+echo "$($PSQL -c 'drop table if exists produto, cliente;')"
 
-echo "$($PSQL -c 'create table if not exists cliente(cliente_id SERIAL PRIMARY KEY, nome varchar(100) DEFAULT NULL, email varchar(100) DEFAULT NULL, whats_app int DEFAULT NULL, localidade varchar(100) DEFAULT NULL);')"
+CLIENTE="cliente(cliente_id SERIAL PRIMARY KEY, nome varchar(100) DEFAULT NULL, email varchar(100) DEFAULT NULL, whats_app int DEFAULT NULL, localidade varchar(100) DEFAULT NULL);"
 
-echo "$($PSQL -c 'create table if not exists produto(produto_id SERIAL PRIMARY KEY, nome varchar(100), qtde integer, valor numeric(10,2), data date, entrega date);')"
+PRODUTO="produto(produto_id SERIAL PRIMARY KEY, nome varchar(100), qtde integer, valor numeric(10,2), data date, entrega date);"
+
+echo "$($PSQL -c "create table if not exists $CLIENTE")"
+
+echo "$($PSQL -c "create table if not exists $PRODUTO")"
+
 
 # echo "$($PSQL -c 'select * from produto;')"
 
