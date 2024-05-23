@@ -8,6 +8,6 @@ cat arquivosCSV/VENDAS.csv | while IFS="," read -r NOME PRODUTO QUANTIDADE VALOR
     echo "$($PSQL -c "insert into clientes (nome, email, whats_app, localidade) values('$NOME', null, null, null);")"
     CLIENTE_ID= echo "$($PSQL -c "select cliente_id from clientes where nome = '$NOME';")"
     
-    echo "$($PSQL -c "insert into vendas (cliente_id, produto, status, data) values($CLIENTE_ID, $PRODUTO, $SITUASAO, '$DATA'")"
+    echo "$($PSQL -c "insert into vendas (cliente_id, produto, status, data_aquisicao) values(0, '$PRODUTO', '$SITUASAO', $DATA")"
     
 done
