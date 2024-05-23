@@ -10,7 +10,6 @@ VENDA=
 
 DESPESAS_VENDA=
 
-
 echo "$($PSQL -c "create table if not exists $CLIENTE")"
 echo "$($PSQL -c "create table if not exists $PRODUTO")"
 
