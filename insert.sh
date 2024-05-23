@@ -6,8 +6,12 @@ CLIENTE="cliente(cliente_id SERIAL PRIMARY KEY, nome varchar(100) DEFAULT NULL, 
 
 PRODUTO="produto(produto_id SERIAL PRIMARY KEY, nome varchar(100), qtde integer, valor numeric(10,2), data date, entrega date);"
 
-echo "$($PSQL -c "create table if not exists $CLIENTE")"
+VENDA=
 
+DESPESAS_VENDA=
+
+
+echo "$($PSQL -c "create table if not exists $CLIENTE")"
 echo "$($PSQL -c "create table if not exists $PRODUTO")"
 
 
