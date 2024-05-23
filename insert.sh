@@ -1,20 +1,17 @@
-#! /bin/bash
+#!/bin/bash
 
-export PGPASSWORD=postgres
-PSQL="psql -U postgres -t --no-align"
-# PSQL="--username=postgres --dbname=myframecg -t --no-align -c";
-echo "$($PSQL "create database myframecg")"
+PSQL="psql -U postgres -d myframecg -t --no-align"
 
-# Do not change code above this line. Use the PSQL variable above to query your database.
+echo "$($PSQL -c 'create table if not exists produto(nome varchar(100), qtde integer, valor numeric(10,2), data date, entrega date);')"
 
-# echo "$($PSQL "TRUNCATE TABLE cliente, produto")"
+# echo "$($PSQL -c 'select * from produto;')"
+
+#echo "$($PSQL "create table if not exists produto();")"
 
 # cat arquivosCSV/DESPESAS.csv | while IFS="," read NOME_LOJA PRODUTO QTDE VALOR DATA ENTREGA; do
     
-
 # done
 
 # cat arquivosCSV/VENDAS.csv | while IFS="," read NOME PRODUTO QTDE VALOR UBER FLASH IMPRESS�O DATA PRAZO SITUA��O STATUS OBS; do
-
 
 # done
