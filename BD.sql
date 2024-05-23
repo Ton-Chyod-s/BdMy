@@ -1,7 +1,3 @@
-CREATE DATABASE myframecg;
-
-USE myframecg;
-
 CREATE TABLE cliente (
   cliente_id SERIAL PRIMARY KEY,
   nome VARCHAR(255) NOT NULL UNIQUE,
