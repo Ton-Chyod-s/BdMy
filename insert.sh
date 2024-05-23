@@ -1,4 +1,4 @@
-PSQL="psql -U postgres -d myframecg -t --no-align"
+PSQL="psql -U postgres -t --no-align"
 
 echo "$($PSQL -c 'drop table if exists produto, cliente;')"
 
