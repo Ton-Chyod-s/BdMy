@@ -1,3 +1,5 @@
+echo "sudo service postgresql restart"
+
 PSQL="psql -U postgres -t --no-align"
 
 BANCODEDADOS="$($PSQL -c "select datname from pg_database;")"
@@ -11,9 +13,14 @@ fi
 
 PSQL="psql -U postgres -d myframecg -t --no-align"
 
-
-
-
+cat BD.SQL | while IFS=";" read -r SQL; do
+    if [[ "$($PSQL -c "$SQL")"  == "ERROR:  relation \"produtos\" already exists" ]]
+    then
+        echo "Tabela já existe"
+    else
+        echo "$($PSQL -c "$SQL")"
+    fi
+done
 
 cat arquivosCSV/DESPESAS.csv | while IFS="," read -r NOME_LOJA PRODUTO QUANTIDADE VALOR DATA ENTREGA; do
     if [[ $QUANTIDADE != 'QUANTIDADE' ]]
