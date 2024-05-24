@@ -31,9 +31,9 @@ done
 cat arquivosCSV/VENDAS.csv | while IFS="," read -r NOME PRODUTO QUANTIDADE VALOR UBER FLASH IMPRESSAO DATA PRAZO SITUACAO STATUS OBS ; do
     if [[ $QUANTIDADE != 'QUANTIDADE' ]]
     then
-        echo "$($PSQL -c "insert into clientes (nome, email, whats_app, localidade) values('$NOME', null, null, null);")"
+        echo "$($PSQL -c "insert into clientes (nome, email, whats_app, localidade) values( '$NOME', null, null, null);")"
         CLIENTE_ID="$($PSQL -c "select cliente_id from clientes where nome = '$NOME';")"
         
-        echo "$($PSQL -c "insert into vendas (cliente_id, produto, status, data_aquisicao) values($CLIENTE_ID, '$PRODUTO', '$SITUACAO', '$DATA' );")"
+        echo "$($PSQL -c "insert into vendas (cliente_id, produto, status, data_aquisicao) values( $CLIENTE_ID, '$PRODUTO', '$SITUACAO', '$DATA' );")"
     fi
 done
