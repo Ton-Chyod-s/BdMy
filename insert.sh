@@ -12,12 +12,11 @@ then
 fi
 
 PSQL="psql -U postgres -d myframecg -t --no-align"
+LISTABANCODADOS="$($PSQL -c "\dt;")"
 
 cat BD.SQL | while IFS=";" read -r SQL; do
-    if [[ "$($PSQL -c "$SQL")"  == "ERROR:  relation \"produtos\" already exists" ]]
+    if [[ -z $LISTABANCODADOS ]]
     then
-        echo "Tabela já existe"
-    else
         echo "$($PSQL -c "$SQL")"
     fi
 done
