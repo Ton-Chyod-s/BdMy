@@ -1,4 +1,5 @@
-echo "sudo service postgresql restart"
+echo "Restarting PostgreSQL service..."
+# sudo service postgresql restart
 
 PSQL="psql -U postgres -t --no-align"
 
