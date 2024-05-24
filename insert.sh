@@ -2,7 +2,17 @@ PSQL="psql -U postgres -t --no-align"
 
 BANCODEDADOS="$($PSQL -c "select datname from pg_database;")"
 
-echo "$BANCODEDADOS"
+IFS=$'\n' read -rd '' -a database_array <<<"$BANCODEDADOS"
+
+if [[ ${database_array}.Length == "myframecg" ]]
+then
+    echo "$($PSQL -c "create database myframecg;")"
+fi
+
+PSQL="psql -U postgres -d myframecg -t --no-align"
+
+
+
 
 
 cat arquivosCSV/DESPESAS.csv | while IFS="," read -r NOME_LOJA PRODUTO QUANTIDADE VALOR DATA ENTREGA; do
