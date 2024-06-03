@@ -39,12 +39,14 @@ cat arquivosCSV/DESPESAS.csv | while IFS="," read -r NOME_LOJA PRODUTO QUANTIDAD
     fi
 done
 
-cat arquivosCSV/VENDAS.csv | while IFS="," read -r NOME PRODUTO QUANTIDADE VALOR UBER FLASH IMPRESSAO DATA PRAZO SITUACAO STATUS OBS ; do
+cat arquivosCSV/VENDAS.csv | while IFS="," read -r NOME PRODUTO QUANTIDADE VALOR UBER_FLASH IMPRESSAO DATA PRAZO SITUACAO STATUS OBS ; do
     if [[ $QUANTIDADE != 'QUANTIDADE' ]]
     then
         echo "$($PSQL -c "insert into clientes (nome, email, whats_app, localidade) values( '$NOME', null, null, null);")"
         CLIENTE_ID="$($PSQL -c "select cliente_id from clientes where nome = '$NOME';")"
         
         echo "$($PSQL -c "insert into vendas (cliente_id, produto, status, data_aquisicao) values( $CLIENTE_ID, '$PRODUTO', '$SITUACAO', '$DATA' );")"
+
+        echo "$($PSQL "insert into despesas_vendas(venda_id, cliente_id, transporte, impressao, outros) values(,$CLIENTE_ID,$UBER_FLASH, $IMPRESSAO, $SITUACAO);")"
     fi
 done
