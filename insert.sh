@@ -20,19 +20,19 @@ done
 if [[ $found == 0 ]]
 then
     echo "$($PSQL -c "create database myframecg;")"
-    exit 0
 fi
 
+PSQL="psql -U postgres -d myframecg -t --no-align"
+#LISTABANCODADOS="$($PSQL -c "\dt;")"
 
-# PSQL="psql -U postgres -d myframecg -t --no-align"
-# LISTABANCODADOS="$($PSQL -c "\dt;")"
+cat BD.SQL | while IFS=";" read -r SQL; do
+    if [[ -z $LISTABANCODADOS ]]
+    then
+        echo "$($PSQL -c "$SQL")"
+    fi
+done
 
-# cat BD.SQL | while IFS=";" read -r SQL; do
-#     if [[ -z $LISTABANCODADOS ]]
-#     then
-#         echo "$($PSQL -c "$SQL")"
-#     fi
-# done
+
 
 # cat arquivosCSV/DESPESAS.csv | while IFS="," read -r NOME_LOJA PRODUTO QUANTIDADE VALOR DATA ENTREGA; do
 #     if [[ $QUANTIDADE != 'QUANTIDADE' ]]
