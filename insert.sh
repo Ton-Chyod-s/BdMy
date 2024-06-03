@@ -46,7 +46,10 @@ cat arquivosCSV/VENDAS.csv | while IFS="," read -r NOME PRODUTO QUANTIDADE VALOR
         CLIENTE_ID="$($PSQL -c "select cliente_id from clientes where nome = '$NOME';")"
         
         echo "$($PSQL -c "insert into vendas (cliente_id, produto, status, data_aquisicao) values( $CLIENTE_ID, '$PRODUTO', '$SITUACAO', '$DATA' );")"
+        
+        # VENDA_ID="$($PSQL -c "select venda_id from vendas where cliente_id = $CLIENTE_ID;")"
+        # echo $VENDA_ID
 
-        echo "$($PSQL "insert into despesas_vendas(venda_id, cliente_id, transporte, impressao, outros) values(,$CLIENTE_ID,$UBER_FLASH, $IMPRESSAO, $SITUACAO);")"
+        # echo "$($PSQL "insert into despesas_vendas(venda_id, cliente_id, transporte, impressao, outros) values($VENDA_ID,$CLIENTE_ID,$UBER_FLASH, $IMPRESSAO, '$SITUACAO');")"
     fi
 done
