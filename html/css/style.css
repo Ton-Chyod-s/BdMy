@@ -17,6 +17,11 @@ header {
     font-size: 0.5em;
 }
 
+#cabecalho {
+  background-color: #fff;
+}
+
+
 footer {
     color: #333;
     text-align: center;
