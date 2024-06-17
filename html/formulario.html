@@ -14,12 +14,19 @@
 </div>
 
 <div id="divTot">
+    <div id="button">   
+        <button type="submit">+ Add New</button>
+        <button type="submit">Copy</button>
+        <button type="submit">Save</button>
+        <button type="submit">Delete</button>
+    </div>
+
     <div id="divForm">
         <div>
             <p id="p1">Dados Pessoais</p>
         </div>
         <div>   
-            <form action="php/insert.php" method="post" style="display: inline-block">
+            <form action="php/insert.php" method="post">
                 <label for="nome">Nome:</label>
                 <input type="text" name="nome" id="nome" required>
                 <label for="email">Email:</label>
@@ -47,9 +54,7 @@
         <input type="text" name="pais" id="pais" required>
     </div>
 
-    <div>   
-        <p><button type="submit">Cadastrar</button></p>
-    </div>
+    
 </div>
 
 <script src="assets/js/script.js"></script>
