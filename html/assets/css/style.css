@@ -23,6 +23,10 @@ header {
     
 }
 
+#divInicio {
+    display: flex;
+}
+
 #headerH2, #headerP {
     margin: 0;
     margin-bottom: -20px;
