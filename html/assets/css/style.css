@@ -20,8 +20,13 @@ header {
 #divHeader {
     margin: 0 auto;
     width: 95%;
-    padding: 5px;
-    border-radius: 5px;
+    
+}
+
+#headerH2, #headerP {
+    margin: 0;
+    margin-bottom: -20px;
+
 }
 
 #divTot {
