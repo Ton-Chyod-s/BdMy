@@ -57,7 +57,16 @@ header {
   margin-left: -11px;
   margin-right: -11px;
   border: 1px solid #DEE2E6;
-} 
+}
+
+#p2 {
+  background: #F8F9FA;
+  padding: 5px;
+  margin-top: 15px;
+  margin-left: -11px;
+  margin-right: -11px;
+  border: 1px solid #DEE2E6;
+}
 
 footer {
     color: #333;
