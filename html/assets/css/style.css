@@ -71,7 +71,7 @@ header {
 #button {
     background-color: #FFF;
     color: white;
-    padding: 15px;
+    padding: 10px;
     text-align: center;
     
 }
@@ -79,6 +79,13 @@ header {
 #divBusca {
     padding-top: 10px;
     padding-left: 15px;
+    
+}
+
+#divSelect {
+    padding-top: 10px;
+    padding-right: 20px;
+    text-align: right;
     
 }
 
