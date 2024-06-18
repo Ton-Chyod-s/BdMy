@@ -4,6 +4,7 @@ var cabecalhoSite = document.getElementById("cabecalhoSite");
 var buttonMenu = document.getElementById("buttonMenu");
 var buttonMenu1 = document.getElementById("buttonMenu1");
 var buttonMenu2 = document.getElementById("buttonMenu2");
+var buttonMenu3 = document.getElementById("buttonMenu3");
 
 function abrirMenu(td) {
     td.style.marginLeft = "-48px";
@@ -26,6 +27,7 @@ menuSite.addEventListener("mouseenter", function() {
     abrirMenu(buttonMenu);
     abrirMenu(buttonMenu1);
     abrirMenu(buttonMenu2);
+    abrirMenu(buttonMenu3);
     
 });
 
@@ -41,4 +43,5 @@ menuSite.addEventListener("mouseleave", function() {
     fecharMenu(buttonMenu);
     fecharMenu(buttonMenu1);
     fecharMenu(buttonMenu2);
+    fecharMenu(buttonMenu3);
 });
