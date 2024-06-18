@@ -1,0 +1,86 @@
+html {
+    font-family: 'Open Sans', Helvetica, sans-serif;
+    line-height: 1.6;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+}
+
+header {
+    background: #2B3F54;
+    color: #fff;
+    padding: 25px 0;
+    text-align: center;
+    font-size: 1.2em;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+#menuSite {
+    background: #F6FAFF;
+    padding: 20px;
+    font-size: 1em;
+    width: 25px;
+    height: 100%;
+    position: fixed;
+    top: 50px; /* Adjust based on header height */
+    left: 0;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+}
+
+main {
+    margin-left: 220px; /* Adjust based on menu width */
+    padding: 20px;
+    margin-top: 100px; /* Adjust based on header height */
+}
+
+#headCorpo {
+    padding: 20px;
+    background-color: #F8F9FA;
+    border: 1px solid #DEE2E6;
+    border-radius: 5px;
+}
+
+form {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #DEE2E6;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #e3e3e3;
+}
+
+form input, form select, form textarea, form button {
+    display: block;
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #DEE2E6;
+    border-radius: 5px;
+}
+
+form button {
+    background-color: #28A745;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #218838;
+}
+
+footer {
+    color: #333;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #F8F9FA;
+    border-top: 1px solid #DEE2E6;
+}
