@@ -22,7 +22,7 @@
 
         <div id="button">  
             <button type="submit">+ Add New</button>
-            <button type="submit">Copy</button>
+            <button type="submit">Update</button>
             <button type="submit">Save</button>
             <button type="submit">Delete</button>
         </div>
@@ -45,7 +45,7 @@
 
     <div id="divForm">
         <div>
-            <p id="p1">Orders</p>
+            <p id="p1">Cliente</p>
         </div>
         <div>   
             <form action="php/insert.php" method="post">
@@ -53,29 +53,37 @@
                 <input type="text" name="nome" id="nome" required>
                 <label for="email">Email:</label>
                 <input type="email" name="email" id="email" required>
-                <label for="telefone">Telefone:</label>
-                <input type="text" name="telefone" id="telefone" required>
-                <label for="endereco">Endereço:</label>
-                <input type="text" name="endereco" id="endereco" required>
+                
             </form>
+        <p></p>
         <div>
+            <label for="telefone">What-sapp:</label>
+            <input type="text" name="telefone" id="telefone" required>
+            <label for="endereco">Localidade:</label>
+            <input type="text" name="endereco" id="endereco" required>
+        <div>
+
+        </div>
     </div>
 
     <div>   
-        <p id="p2">Endereço</p>
+        <p id="p2">Produto</p>
     </div>
 
     <div>  
-        <label for="cidade">Cidade:</label>
+        <label for="cidade">Nome:</label>
         <input type="text" name="cidade" id="cidade" required>
-        <label for="estado">Estado:</label>
+        <label for="estado">Quantidade:</label>
         <input type="text" name="estado" id="estado" required>
-        <label for="cep">CEP:</label>
+        
+    </div>
+    <p></p>
+    <div>
+        <label for="cep">Valor:</label>
         <input type="text" name="cep" id="cep" required>
         <label for="pais">País:</label>
         <input type="text" name="pais" id="pais" required>
     </div>
-
     
 </div>
 
