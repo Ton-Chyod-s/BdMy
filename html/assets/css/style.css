@@ -123,17 +123,20 @@ header {
 }
 
 #cabecalhoSite {
-    background: #9e4040;
+    background: #2B3F54;
     color: #fff;
-    padding: 25px 0;
+    padding: 26px 0;
     text-align: center;
     font-size: 0.5em;
+    position: fixed;
+    width: 100%;
+    top: 0;
 }
 
 #menuSite {
     background: #333;
     color: #fff;
-    padding: 25px ;
+    padding: 20px ;
     font-size: 0.5em;
     width: 0%;
     height: 100%;
@@ -145,7 +148,7 @@ header {
     padding: 20%;
     border: 1px solid #DEE2E6;
     box-shadow: 0 0 5px #e3e3e3;
-    margin-top: 45px;
+    margin-top: 50px;
     margin-bottom: 65px;
     margin-left: 95px;
 }
