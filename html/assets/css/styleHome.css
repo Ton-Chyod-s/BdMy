@@ -50,6 +50,13 @@ header {
     color: #292B2C;
 }
 
+#formulario {
+    border: 1px solid #DEE2E6;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #e3e3e3;
+
+}
+
 main {
     margin-left: 100px; /* Adjust based on menu width */
     padding: 20px;
