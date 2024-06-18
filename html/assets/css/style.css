@@ -24,7 +24,8 @@ header {
 }
 
 #divInicio {
-    display: inline-block;
+    display: flex;
+    justify-content: space-between;
 }
 
 #headerH2, #headerP {
