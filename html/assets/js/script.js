@@ -4,6 +4,7 @@ var cabecalhoSite = document.getElementById("cabecalhoSite");
 
 function mudarCssMenu(td) {
     td.style.padding = "58px";
+    td.style.transition = "0.1s";
 };
 
 function sumirHeader(td) {
@@ -12,6 +13,7 @@ function sumirHeader(td) {
 
 function mouseLeave(td) {
     td.style.padding = "8px";
+    td.style.transition = "0.2s";
 };
 
 menuSite.addEventListener("mouseenter", function() {

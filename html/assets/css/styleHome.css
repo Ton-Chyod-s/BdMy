@@ -87,6 +87,10 @@ form button:hover {
     background-color: #218838;
 }
 
+form button:active {
+    background-color: #1E7E34;
+}
+
 footer {
     color: #292B2C;
     text-align: center;
