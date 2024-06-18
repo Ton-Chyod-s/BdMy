@@ -34,11 +34,11 @@ header {
 
 #divTot {
     margin: 0 auto;
-    width: 85%;
+    width: none;
     border: 1px solid #DEE2E6;
     border-radius: 5px;
     box-shadow: 0 0 5px #e3e3e3;
-    margin-top: 50px;
+    margin-top: 5px;
 
 }
 
