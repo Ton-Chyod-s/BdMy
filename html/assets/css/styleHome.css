@@ -41,7 +41,6 @@ main {
     transition: margin-left 0.5s;
 }
 
-
 form {
     margin-top: 20px;
     padding: 20px;
@@ -73,7 +72,6 @@ form button:hover {
 footer {
     color: #333;
     text-align: center;
-    padding: 10px;
     position: fixed;
     bottom: 0;
     width: 100%;
