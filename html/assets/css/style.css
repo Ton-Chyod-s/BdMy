@@ -24,7 +24,7 @@ header {
 }
 
 #divInicio {
-    display: flex;
+    display: inline-block;
 }
 
 #headerH2, #headerP {
