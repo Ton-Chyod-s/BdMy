@@ -10,19 +10,19 @@ function sumirHeader(td) {
     td.style.display = "none";
 };
 
-function mouseClick(td) {
+function mouseLeave(td) {
     td.style.padding = "8px";
 };
 
-menuSite.addEventListener("mouseover", function() {
+menuSite.addEventListener("mouseenter", function() {
     mudarCssMenu(menuSite);
 });
 
-menuSite.addEventListener("scrollend", function() {
+menuSite.addEventListener("scrol", function() {
     mudarCssMenu(menuSite);
     sumirHeader(cabecalhoSite);
 });
 
-document.addEventListener("click", function() {
-    mouseClick(menuSite);
+menuSite.addEventListener("mouseleave", function() {
+    mouseLeave(menuSite);
 });
