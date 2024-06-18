@@ -93,6 +93,36 @@ header {
     
 }
 
+#cabecalhoSite {
+    background: #9e4040;
+    color: #fff;
+    padding: 25px 0;
+    text-align: center;
+    font-size: 0.5em;
+}
+
+#menuSite {
+    background: #333;
+    color: #fff;
+    padding: 25px ;
+    font-size: 0.5em;
+    width: 0%;
+    height: 100%;
+    position: fixed;
+}
+
+#corpoSite {
+
+    width: 50%;
+    padding: 20%;
+    border: 1px solid #DEE2E6;
+    box-shadow: 0 0 5px #e3e3e3;
+    margin-top: 45px;
+    margin-bottom: 65px;
+    margin-left: 95px;
+}
+
+
 footer {
     color: #333;
     text-align: center;
@@ -101,3 +131,5 @@ footer {
     bottom: 0;
     width: 100%;
 }
+
+
