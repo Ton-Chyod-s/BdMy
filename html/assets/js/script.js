@@ -2,29 +2,17 @@ var menuSite = document.getElementById("menuSite");
 var corpoSite = document.getElementById("corpoSite");
 var cabecalhoSite = document.getElementById("cabecalhoSite");
 
-function mudarCssMenu(td) {
-    td.style.padding = "58px";
-    td.style.transition = "0.2s";
-};
-
-function sumirHeader(td) {
-    td.style.display = "none";
-};
-
-function mouseLeave(td) {
-    td.style.padding = "8px";
-    td.style.transition = "0.3s";
-};
-
 menuSite.addEventListener("mouseenter", function() {
-    mudarCssMenu(menuSite);
+    menuSite.style.padding = "58px";
+    menuSite.style.transition = "0.2s";
 });
 
 menuSite.addEventListener("scrol", function() {
-    mudarCssMenu(menuSite);
-    sumirHeader(cabecalhoSite);
+    menuSite.style.display = "none";
+    
 });
 
 menuSite.addEventListener("mouseleave", function() {
-    mouseLeave(menuSite);
+    menuSite.style.padding = "8px";
+    menuSite.style.transition = "0.2s";
 });
