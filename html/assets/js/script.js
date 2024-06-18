@@ -9,13 +9,14 @@ function abrirMenu(td) {
     td.style.marginLeft = "-48px";
     td.style.width = "138px";
     td.style.transition = "0.1s";
-    // td.style.backgroundcolor = "#D7E5F1";
+    td.style.backgroundcolor = "#D7E5F1";
 }
 
 function fecharMenu(td) {
     td.style.width = "41px";
     td.style.marginLeft = "0px";
     td.style.transition = "0.3s";
+    td.style.backgroundcolor = "#F6FAFF";
 }
 
 menuSite.addEventListener("mouseenter", function() {
@@ -25,7 +26,9 @@ menuSite.addEventListener("mouseenter", function() {
     abrirMenu(buttonMenu);
     abrirMenu(buttonMenu1);
     abrirMenu(buttonMenu2);
+    
 });
+
 
 menuSite.addEventListener("scrol", function() {
     menuSite.style.display = "none";
