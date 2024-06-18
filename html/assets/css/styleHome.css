@@ -21,6 +21,18 @@ header {
     z-index: 1000;
 }
 
+#cabecalhoSite {
+    background: #292B2C;
+    color: #fff;
+    padding: 25px 0;
+    text-align: center;
+    font-size: 1.2em;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
 #menuSite {
     background: #F6FAFF;
     padding: 8px;
@@ -32,6 +44,7 @@ header {
     left: 0;
     box-shadow: 2px 0 5px rgba(0,0,0,0.1);
 }
+
 
 #corpoSite {
     transition: margin-left 0.5s;
