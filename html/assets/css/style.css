@@ -108,10 +108,18 @@ header {
     
 }
 
+#lang {
+    text-align: left;
+    padding-right: 20px;
+    color: #4A5261;
+
+}
+
 #divSelect {
     padding-top: 10px;
     padding-right: 20px;
     text-align: right;
+    color: #4A5261;
 }
 
 #cabecalhoSite {
