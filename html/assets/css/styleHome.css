@@ -10,7 +10,7 @@ body {
 }
 
 header {
-    background: #2B3F54;
+    background: #292B2C;
     color: #fff;
     padding: 25px 0;
     text-align: center;
@@ -33,6 +33,11 @@ header {
     box-shadow: 2px 0 5px rgba(0,0,0,0.1);
 }
 
+#corpoSite {
+    transition: margin-left 0.5s;
+    color: #292B2C;
+}
+
 main {
     margin-left: 100px; /* Adjust based on menu width */
     padding: 20px;
@@ -40,6 +45,7 @@ main {
     margin-right: 50px;
     transition: margin-left 0.5s;
 }
+
 
 form {
     margin-top: 20px;
@@ -70,7 +76,7 @@ form button:hover {
 }
 
 footer {
-    color: #333;
+    color: #292B2C;
     text-align: center;
     position: fixed;
     bottom: 0;
