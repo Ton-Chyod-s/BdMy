@@ -158,9 +158,8 @@ header {
     border-radius: 5px;
 }
 
-#inputNome {
-    
-
+#inputNome, #spanEmail, #spanTelefone, #spanEndereco, #spanCidade, #spanQuantidade, #spanValor, #spanDescricao {
+    padding: 50px;
 }
 
 
