@@ -125,6 +125,16 @@ header {
 }
 
 
+#input {
+
+    margin-top: 15px;
+    margin-left: 15px;
+    margin-right: 15px;
+    border: 1px solid #84878a;
+    border-radius: 5px;
+}
+
+
 footer {
     color: #333;
     text-align: center;
