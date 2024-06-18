@@ -18,6 +18,7 @@ function fecharMenu(td) {
 menuSite.addEventListener("mouseenter", function() {
     menuSite.style.padding = "58px";
     menuSite.style.transition = "0.2s";
+    menuSite.style.marginTop = "-50px";
     abrirMenu(buttonMenu);
     abrirMenu(buttonMenu1);
     abrirMenu(buttonMenu2);
@@ -32,6 +33,7 @@ menuSite.addEventListener("scrol", function() {
 menuSite.addEventListener("mouseleave", function() {
     menuSite.style.padding = "8px";
     menuSite.style.transition = "0.2s";
+    menuSite.style.marginTop = "0px";
     fecharMenu(buttonMenu);
     fecharMenu(buttonMenu1);
     fecharMenu(buttonMenu2);
