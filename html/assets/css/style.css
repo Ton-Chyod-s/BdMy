@@ -141,6 +141,7 @@ header {
     width: 0%;
     height: 100%;
     position: fixed;
+    margin-top: -100px;
 }
 
 #corpoSite {
@@ -148,8 +149,8 @@ header {
     padding: 20%;
     border: 1px solid #DEE2E6;
     box-shadow: 0 0 5px #e3e3e3;
-    margin-top: 50px;
-    margin-bottom: 65px;
+    margin-top: 150px;
+    margin-bottom: 35px;
     margin-left: 95px;
 }
 
@@ -164,7 +165,6 @@ header {
 #inputNome, #spanEmail, #spanTelefone, #spanEndereco, #spanCidade, #spanQuantidade, #spanValor, #spanDescricao {
     padding: 50px;
 }
-
 
 footer {
     color: #333;
