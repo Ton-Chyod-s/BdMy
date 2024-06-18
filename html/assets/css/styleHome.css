@@ -59,8 +59,16 @@ header {
 #buttonMenu {
     display: block;
     width: 100%;
-    padding: 3px;
+    padding: -2px;
+    padding-top: 8px;
+    padding-bottom: 8px;
     border: 1px solid #D5DDE8;
+    font-size: 0.9em;
+    
+}
+
+#menu {
+    margin: -8px;
 
 }
 
