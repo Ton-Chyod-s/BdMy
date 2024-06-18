@@ -23,7 +23,7 @@ header {
 
 #menuSite {
     background: #F6FAFF;
-    padding: 20px;
+    padding: 8px;
     font-size: 1em;
     width: 25px;
     height: 100%;
@@ -34,17 +34,13 @@ header {
 }
 
 main {
-    margin-left: 220px; /* Adjust based on menu width */
+    margin-left: 100px; /* Adjust based on menu width */
     padding: 20px;
-    margin-top: 100px; /* Adjust based on header height */
+    margin-top: 80px; /* Adjust based on header height */
+    margin-right: 50px;
+    transition: margin-left 0.5s;
 }
 
-#headCorpo {
-    padding: 20px;
-    background-color: #F8F9FA;
-    border: 1px solid #DEE2E6;
-    border-radius: 5px;
-}
 
 form {
     margin-top: 20px;
