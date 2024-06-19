@@ -88,3 +88,16 @@ corMenuEnter(buttonMenu3);
 corMenuLeave(buttonMenu3);
 
 corMenuClick(buttonMenu);
+
+buttonMenu.addEventListener("mouseenter", function() {
+    var newLink = document.createElement("img");
+    newLink.src = "assets/images/icon/home.png";
+    newLink.width = "22";
+    newLink.height = "22";
+
+    // Append the new anchor element to buttonMenu
+    buttonMenu.appendChild(newLink);
+    
+   
+    //window.alert("teste");
+});
