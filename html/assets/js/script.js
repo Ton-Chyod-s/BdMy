@@ -92,11 +92,15 @@ corMenuClick(buttonMenu);
 buttonMenu.addEventListener("mouseenter", function() {
     var newLink = document.createElement("a");
     newLink.innerText = "Home";
-    
+    newLink.id = "linkHome";
+    newLink.href = "index.html";
 
-    // Append the new anchor element to buttonMenu
     buttonMenu.appendChild(newLink);
-    
-   
-    //window.alert("teste");
+});
+
+buttonMenu.addEventListener("mouseleave", function() {
+    var newLink = document.getElementById("linkHome");
+    newLink.removeChild();
+
+    buttonMenu.appendChild(newLink);
 });
