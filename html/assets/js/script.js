@@ -75,48 +75,28 @@ corMenuLeave(buttonMenu3);
 
 corMenuClick(buttonMenu);
 
-buttonMenu.addEventListener("mouseenter", function() {
+function addLink(button, text, href) {
     var newLink = document.createElement("a");
-    newLink.innerText = "Home";
-    newLink.id = "linkHome";
-    newLink.href = "index.html";
+    newLink.innerText = text;
+    newLink.className = "dynamicLink";  // Changed to class name
+    newLink.href = href;
+    button.appendChild(newLink);
+}
 
-    buttonMenu.appendChild(newLink);
+function removeLinks() {
+    var links = document.querySelectorAll(".dynamicLink");
+    links.forEach(function(link) {
+        link.remove();
+    });
+}
+
+menuSite.addEventListener("mouseenter", function() {
+    addLink(buttonMenu, "Home", "index.html");
+    addLink(buttonMenu1, "Lista de Clientes", "index.html");
+    addLink(buttonMenu2, "Myframe", "index.html");
+    addLink(buttonMenu3, "Banco de Dados", "index.html");
 });
-
-buttonMenu1.addEventListener("mouseenter", function() {
-    var newLink = document.createElement("a");
-    newLink.innerText = "Lista de Clientes";
-    newLink.id = "linkHome";
-    newLink.href = "index.html";
-
-    buttonMenu1.appendChild(newLink);
-});
-
-buttonMenu2.addEventListener("mouseenter", function() {
-    var newLink = document.createElement("a");
-    newLink.innerText = "Myframe";
-    newLink.id = "linkHome";
-    newLink.href = "index.html";
-
-    buttonMenu2.appendChild(newLink);
-});
-
-buttonMenu3.addEventListener("mouseenter", function() {
-    var newLink = document.createElement("a");
-    newLink.innerText = "Banco de Dados";
-    newLink.id = "linkHome";
-    newLink.href = "index.html";
-
-    buttonMenu3.appendChild(newLink);
-});
-
 
 menuSite.addEventListener("mouseleave", function() {
-    var newLink = document.getElementById("linkHome");
-    newLink.remove();
-    newLink.removeChild();
-
-
-    menuSite.appendChild(newLink);
+    removeLinks();
 });
