@@ -90,10 +90,9 @@ corMenuLeave(buttonMenu3);
 corMenuClick(buttonMenu);
 
 buttonMenu.addEventListener("mouseenter", function() {
-    var newLink = document.createElement("img");
-    newLink.src = "assets/images/icon/home.png";
-    newLink.width = "22";
-    newLink.height = "22";
+    var newLink = document.createElement("a");
+    newLink.innerText = "Home";
+    
 
     // Append the new anchor element to buttonMenu
     buttonMenu.appendChild(newLink);
