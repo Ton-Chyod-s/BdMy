@@ -8,18 +8,33 @@ function abrirMenu(td) {
     td.style.marginLeft = "-48px";
     td.style.width = "138px";
     td.style.transition = "0.1s";
-    td.style.backgroundColor = "#D7E5F1";
+    
 }
 
 function fecharMenu(td) {
     td.style.width = "41px";
     td.style.marginLeft = "0px";
     td.style.transition = "0.3s";
-    td.style.backgroundColor = "#F6FAFF";
+    
 }
 
-function imagemMenu(td) {
-    document.getElementById("imageoption").src = "assets/images/icon/home.png";
+function corMenuEnter(td) {
+    td.addEventListener("mouseenter", function() {
+        td.style.backgroundColor = "#D7E5F1";
+        td.style.transition = "0.3s";
+    });
+}
+
+function corMenuLeave(td) {
+    td.addEventListener("mouseleave", function() {
+        td.style.backgroundColor = "#F6FAFF";
+    });
+}
+
+function corMenuClick(td) {
+    td.addEventListener("click", function() {
+        td.style.backgroundColor = "#D7E5F1";
+    });
 }
 
 menuSite.addEventListener("mouseenter", function() {
@@ -28,16 +43,16 @@ menuSite.addEventListener("mouseenter", function() {
     menuSite.style.marginTop = "-50px";
     
     abrirMenu(buttonMenu);
-    buttonMenu.innerText = "Home";
+    // buttonMenu.innerText = "Home";
     
     abrirMenu(buttonMenu1);
-    buttonMenu1.innerText = "Lista de Clientes";
+    // buttonMenu1.innerText = "Lista de Clientes";
     
     abrirMenu(buttonMenu2);
-    buttonMenu2.innerText = "Myframe";
+    // buttonMenu2.innerText = "Myframe";
     
     abrirMenu(buttonMenu3);
-    buttonMenu3.innerText = "Banco de dados";
+    // buttonMenu3.innerText = "Banco de dados";
 });
 
 menuSite.addEventListener("scroll", function() {
@@ -51,21 +66,25 @@ menuSite.addEventListener("mouseleave", function() {
     
     
     fecharMenu(buttonMenu);
-
-    buttonMenu.innerText = "";
-    buttonMenu
-    var img = buttonMenu.querySelector("img");
-
-    if (img) {
-        buttonMenu.createElement("img").src = "assets/images/icon/home.png";
-    }
+    // buttonMenu.innerText = "";
     
     fecharMenu(buttonMenu1);
-    buttonMenu1.innerText = "";
+    // buttonMenu1.innerText = "";
     
     fecharMenu(buttonMenu2);
-    buttonMenu2.innerText = "";
+    // buttonMenu2.innerText = "";
     
     fecharMenu(buttonMenu3);
-    buttonMenu3.innerText = "";
+    // buttonMenu3.innerText = "";
 });
+
+corMenuEnter(buttonMenu);
+corMenuLeave(buttonMenu);
+corMenuEnter(buttonMenu1);
+corMenuLeave(buttonMenu1);
+corMenuEnter(buttonMenu2);
+corMenuLeave(buttonMenu2);
+corMenuEnter(buttonMenu3);
+corMenuLeave(buttonMenu3);
+
+corMenuClick(buttonMenu);
