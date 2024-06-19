@@ -43,16 +43,10 @@ menuSite.addEventListener("mouseenter", function() {
     menuSite.style.marginTop = "-50px";
     
     abrirMenu(buttonMenu);
-    // buttonMenu.innerText = "Home";
-    
     abrirMenu(buttonMenu1);
-    // buttonMenu1.innerText = "Lista de Clientes";
-    
     abrirMenu(buttonMenu2);
-    // buttonMenu2.innerText = "Myframe";
-    
     abrirMenu(buttonMenu3);
-    // buttonMenu3.innerText = "Banco de dados";
+
 });
 
 menuSite.addEventListener("scroll", function() {
@@ -64,18 +58,10 @@ menuSite.addEventListener("mouseleave", function() {
     menuSite.style.transition = "0.2s";
     menuSite.style.marginTop = "0px";
     
-    
     fecharMenu(buttonMenu);
-    // buttonMenu.innerText = "";
-    
     fecharMenu(buttonMenu1);
-    // buttonMenu1.innerText = "";
-    
     fecharMenu(buttonMenu2);
-    // buttonMenu2.innerText = "";
-    
     fecharMenu(buttonMenu3);
-    // buttonMenu3.innerText = "";
 });
 
 corMenuEnter(buttonMenu);
@@ -98,9 +84,39 @@ buttonMenu.addEventListener("mouseenter", function() {
     buttonMenu.appendChild(newLink);
 });
 
-buttonMenu.addEventListener("mouseleave", function() {
+buttonMenu1.addEventListener("mouseenter", function() {
+    var newLink = document.createElement("a");
+    newLink.innerText = "Lista de Clientes";
+    newLink.id = "linkHome";
+    newLink.href = "index.html";
+
+    buttonMenu1.appendChild(newLink);
+});
+
+buttonMenu2.addEventListener("mouseenter", function() {
+    var newLink = document.createElement("a");
+    newLink.innerText = "Myframe";
+    newLink.id = "linkHome";
+    newLink.href = "index.html";
+
+    buttonMenu2.appendChild(newLink);
+});
+
+buttonMenu3.addEventListener("mouseenter", function() {
+    var newLink = document.createElement("a");
+    newLink.innerText = "Banco de Dados";
+    newLink.id = "linkHome";
+    newLink.href = "index.html";
+
+    buttonMenu3.appendChild(newLink);
+});
+
+
+menuSite.addEventListener("mouseleave", function() {
     var newLink = document.getElementById("linkHome");
+    newLink.remove();
     newLink.removeChild();
 
-    buttonMenu.appendChild(newLink);
+
+    menuSite.appendChild(newLink);
 });
