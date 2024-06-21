@@ -86,7 +86,7 @@ function criarTabela() {
 function deletarTabela() {
 
     var divTabela = document.querySelector("#tabelas");
-    var nome = this.previousSibling.textContent.split(": ")[1];
+    var nome = this.previousSibling.textContent.split(":")[1];
 
     var div = divTabela.querySelector(`#${nome}-header`);
     var table = divTabela.querySelector(`#${nome}`);
@@ -99,4 +99,26 @@ function deletarTabela() {
     } else {
         window.alert("Tabela não existe");
     }
+}
+
+function novaPlanilha() {
+    var criar = document.querySelector("#criar");
+    criar.remove();
+
+    var div = document.querySelector("#id-tabela");
+
+    var inputNomeTabela = document.createElement("input");
+    inputNomeTabela.id = "nomeTabela";
+
+    var inputcabecalhoTabela = document.createElement("input");
+    inputcabecalhoTabela.id = "cabecalhoTabela";
+
+    var button = document.createElement("button");
+    button.textContent = "Criar Tabela";
+    button.onclick = criarTabela;
+
+    div.appendChild(inputNomeTabela);
+    div.appendChild(inputcabecalhoTabela);
+    div.appendChild(button);
+    
 }
