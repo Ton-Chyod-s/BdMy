@@ -4,6 +4,8 @@ function criarTabela() {
     var nomeTabela = document.querySelector("#nomeTabela").value;
     var cabecalho = document.querySelector("#cabecalhoTabela").value; 
 
+    nomeTabela = nomeTabela.replace(" ", "_");
+    
     function hasTable(div, tableId) {
         if (div && tableId !== "") {
             var table = div.querySelector(`#${tableId}`);
