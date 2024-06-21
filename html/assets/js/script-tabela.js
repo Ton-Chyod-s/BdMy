@@ -47,15 +47,16 @@ function criarTabela() {
         div.id = `${nomeTabela}-div`;
         divTabela.appendChild(div);
 
-        div.textContent = `Nome da tabela: ${nomeTabela}`;
+        var label = document.createElement("label");
+        label.textContent = `Nome da tabela: ${nomeTabela}`;
+        div.appendChild(label);
 
         var buttonDel = document.createElement("button");
         buttonDel.textContent = "Deletar";
         buttonDel.onclick = deletarTabela;
         buttonDel.id = `${nomeTabela}-button`;
-        divTabela.appendChild(buttonDel);
+        div.appendChild(buttonDel);
         
-
         var tabela = document.createElement("table");
         tabela.id = nomeTabela;
         var thead = document.createElement("thead");
@@ -85,7 +86,7 @@ function criarTabela() {
 function deletarTabela() {
 
     var divTabela = document.querySelector("#tabelas");
-    var nome = this.previousElementSibling.id.split("-")[0];
+    var nome = this.previousSibling.textContent.split(": ")[1];
 
     var div = divTabela.querySelector(`#${nome}-div`);
     var table = divTabela.querySelector(`#${nome}`);
