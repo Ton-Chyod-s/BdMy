@@ -7,13 +7,15 @@
     <link rel="stylesheet" href="assets/css/style-tabela.css">
 </head>
 <body>
-    <form action="tabela.php" method="post">
-        <div id="id-tabela">
-            
-        </div>
-        <label for=""><input type="submit" value="Criar"></label>
-    </form>
-
+    
+    <div id="id-tabela">
+        <input type="text" name="" id="cabecalhoTabela">
+    </div>
+    <label for=""><input type="submit" value="Criar" onclick="criarTabela(
+        document.getElementById('cabecalhoTabela').value
+    )">
+    </label>
+    
     <script src="assets/js/script-tabela.js"></script>
 </body>
 </html>
