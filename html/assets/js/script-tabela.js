@@ -43,12 +43,12 @@ function criarTabela() {
 
         return;
     } else {
-        var div = document.createElement("div");
-        div.id = `${nomeTabela}-div`;
+        var div = document.createElement("header");
+        div.id = `${nomeTabela}-header`;
         divTabela.appendChild(div);
 
         var label = document.createElement("label");
-        label.textContent = `Nome da tabela: ${nomeTabela}`;
+        label.textContent = `tabela:${nomeTabela}`;
         div.appendChild(label);
 
         var buttonDel = document.createElement("button");
@@ -88,7 +88,7 @@ function deletarTabela() {
     var divTabela = document.querySelector("#tabelas");
     var nome = this.previousSibling.textContent.split(": ")[1];
 
-    var div = divTabela.querySelector(`#${nome}-div`);
+    var div = divTabela.querySelector(`#${nome}-header`);
     var table = divTabela.querySelector(`#${nome}`);
     var button = divTabela.querySelector(`#${nome}-button`);
 
