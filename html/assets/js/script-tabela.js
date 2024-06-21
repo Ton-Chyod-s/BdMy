@@ -20,7 +20,7 @@ function criarTabela(cabeçalho, conteudo) {
     var trBody = document.createElement("tr");
     var td = document.createElement("td");
 
-    td.textContent = conteudo;
+    td.textContent = conteudo ?? "Sem conteúdo";
 
     trBody.appendChild(td);
     tbody.appendChild(trBody);
