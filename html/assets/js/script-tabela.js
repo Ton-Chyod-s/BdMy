@@ -16,27 +16,28 @@ function criarTabela() {
 
     if ( isExistTable ) {
         var tabela = divTabela.querySelector("#" + nomeTabela);
-    
         var headerCells = tabela.querySelectorAll("thead th");
+        
+        var headerExists = false; 
 
         headerCells.forEach(function(th) {
             if (th.textContent === cabecalho) {
                 window.alert("Nome do cabeçalho já existe");
-            } else {
-                console.log(th.textContent);
-                var thead = tabela.querySelector("thead");
-                var tr = document.createElement("tr");
-                var th = document.createElement("th");
-                th.id = cabecalho;
-
-                th.textContent = cabecalho;
-
-                thead.appendChild(tr);
-                tr.appendChild(th);
-                
-                exit;
+                headerExists = true;
+                return; 
             }
         });
+
+        if (!headerExists) {
+            var thead = tabela.querySelector("thead");
+            var tr = document.createElement("tr");
+            var th = document.createElement("th");
+            th.id = cabecalho;
+            th.textContent = cabecalho;
+
+            tr.appendChild(th);
+            thead.appendChild(tr);
+        }
 
         return;
     } else {
