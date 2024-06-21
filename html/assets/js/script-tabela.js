@@ -116,8 +116,9 @@ function novaPlanilha() {
     inputcabecalhoTabela.id = "cabecalhoTabela";
     inputcabecalhoTabela.placeholder = "Nome do Cabeçalho";
 
-    var button = document.createElement("button");
-    button.textContent = "Criar Tabela";
+    var button = document.createElement("input");
+    button.value = "Criar Tabela";
+    button.type = "button";
     button.id = "criar";
     button.onclick = criarTabela;
 
@@ -125,8 +126,9 @@ function novaPlanilha() {
     div.appendChild(inputcabecalhoTabela);
     div.appendChild(button);
     
-    var confimar = document.createElement("button");
-    confimar.textContent = "Confirmar";
+    var confimar = document.createElement("input");
+    confimar.value = "Confirmar";
+    confimar.type = "button";
     confimar.id = "confirmar";
     confimar.onclick = confirmarPlanilha;
     div.appendChild(confimar);
