@@ -51,8 +51,9 @@ function criarTabela() {
         label.textContent = `tabela:${nomeTabela}`;
         div.appendChild(label);
 
-        var buttonDel = document.createElement("button");
-        buttonDel.textContent = "Deletar";
+        var buttonDel = document.createElement("input");
+        buttonDel.type = "button";
+        buttonDel.value = "Deletar";
         buttonDel.onclick = deletarTabela;
         buttonDel.id = `${nomeTabela}-button`;
         div.appendChild(buttonDel);
