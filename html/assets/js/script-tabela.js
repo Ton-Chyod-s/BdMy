@@ -41,6 +41,12 @@ function criarTabela() {
 
         return;
     } else {
+        var div = document.createElement("div");
+        div.id = `${nomeTabela}-div`;
+        divTabela.appendChild(div);
+
+        div.textContent = `Nome da tabela: ${nomeTabela}`;
+
         var tabela = document.createElement("table");
         tabela.id = nomeTabela;
         var thead = document.createElement("thead");
@@ -53,9 +59,13 @@ function criarTabela() {
         var tr = document.createElement("tr");
         var th = document.createElement("th");
         th.id = cabecalho;
-
-        th.textContent = cabecalho; 
-
+        
+        if (cabecalho === "" || cabecalho.includes("id")) {
+            th.textContent = `id-${nomeTabela}`; 
+        } else {
+            th.textContent = cabecalho; 
+        }
+    
         thead.appendChild(tr);
         tr.appendChild(th);
 
