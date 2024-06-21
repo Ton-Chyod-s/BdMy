@@ -110,9 +110,11 @@ function novaPlanilha() {
 
     var inputNomeTabela = document.createElement("input");
     inputNomeTabela.id = "nomeTabela";
+    inputNomeTabela.placeholder = "Nome da Tabela";
 
     var inputcabecalhoTabela = document.createElement("input");
     inputcabecalhoTabela.id = "cabecalhoTabela";
+    inputcabecalhoTabela.placeholder = "Nome do Cabeçalho";
 
     var button = document.createElement("button");
     button.textContent = "Criar Tabela";

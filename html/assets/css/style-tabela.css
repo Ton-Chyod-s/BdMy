@@ -22,6 +22,30 @@ input {
     box-sizing: border-box;
 }
 
+div#id-tabela input#nomeTabela {
+    height: 25px;
+    width: 15%;
+    margin-top: 10px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+
+}
+
+div#id-tabela input#cabecalhoTabela {
+    height: 25px;
+    width: 15%;
+    margin-top: 10px;
+    margin-left: 25px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+
+
+}
+
+
+
 table {
     width: 100%;
     margin-top: 10px;
