@@ -1,3 +1,8 @@
+function nomeTabela() {
+
+}
+
+
 function criarTabela(cabeçalho, conteudo) {
     var divTabela = document.querySelector("#tabela");
 
@@ -20,7 +25,7 @@ function criarTabela(cabeçalho, conteudo) {
     var trBody = document.createElement("tr");
     var td = document.createElement("td");
 
-    td.textContent = conteudo ?? "Sem conteúdo";
+    td.textContent = conteudo;
 
     trBody.appendChild(td);
     tbody.appendChild(trBody);
