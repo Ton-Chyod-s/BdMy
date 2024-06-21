@@ -47,6 +47,13 @@ function criarTabela() {
 
         div.textContent = `Nome da tabela: ${nomeTabela}`;
 
+        var buttonDel = document.createElement("button");
+        buttonDel.textContent = "Deletar";
+        buttonDel.onclick = deletarTabela;
+        buttonDel.id = `${nomeTabela}-button`;
+        divTabela.appendChild(buttonDel);
+        
+
         var tabela = document.createElement("table");
         tabela.id = nomeTabela;
         var thead = document.createElement("thead");
@@ -71,4 +78,27 @@ function criarTabela() {
 
         return;
     }
+}
+
+function deletarTabela() {
+
+    var divTabela = document.querySelector("#tabelas");
+    var nome = document.querySelector('button').id.split("-")[0];
+    
+    
+
+    // var nomeTabela = document.querySelector(`tabelas > table#${nomeTabela} `).value;
+
+    // var div = divTabela.querySelector(`#${nomeTabela}-div`);
+    // var table = divTabela.querySelector(`#${nomeTabela}`);
+    // var button = divTabela.querySelector(`#${nomeTabela}-button`);
+
+    
+    // if (div) {
+    //     div.remove();
+    //     table.remove();
+    //     button.remove();
+    // } else {
+    //     window.alert("Tabela não existe");
+    // }
 }
