@@ -121,4 +121,10 @@ function novaPlanilha() {
     div.appendChild(inputcabecalhoTabela);
     div.appendChild(button);
     
+    var buttonConfirmar = document.createElement("button");
+    buttonConfirmar.textContent = "Confirmar";
+    buttonConfirmar.onclick = confirmarPlanilha;
+
+    div.appendChild(buttonConfirmar);
+    
 }
