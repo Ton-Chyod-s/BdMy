@@ -68,6 +68,14 @@ function criarTabela() {
         tabela.appendChild(tbody);
 
         var tr = document.createElement("tr");
+        var select = document.createElement("select");
+        select.id = "select";
+        select.name = "select";
+        select.options[0] = new Option("id", "id");
+        select.options[1] = new Option("text", "text");
+        
+
+
         var th = document.createElement("th");
         th.id = cabecalho;
         
@@ -78,6 +86,7 @@ function criarTabela() {
         }
     
         thead.appendChild(tr);
+        tr.appendChild(select);
         tr.appendChild(th);
 
         return;
