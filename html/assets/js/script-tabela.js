@@ -83,22 +83,17 @@ function criarTabela() {
 function deletarTabela() {
 
     var divTabela = document.querySelector("#tabelas");
-    var nome = document.querySelector('button').id.split("-")[0];
-    
-    
+    var nome = this.previousElementSibling.id.split("-")[0];
 
-    // var nomeTabela = document.querySelector(`tabelas > table#${nomeTabela} `).value;
+    var div = divTabela.querySelector(`#${nome}-div`);
+    var table = divTabela.querySelector(`#${nome}`);
+    var button = divTabela.querySelector(`#${nome}-button`);
 
-    // var div = divTabela.querySelector(`#${nomeTabela}-div`);
-    // var table = divTabela.querySelector(`#${nomeTabela}`);
-    // var button = divTabela.querySelector(`#${nomeTabela}-button`);
-
-    
-    // if (div) {
-    //     div.remove();
-    //     table.remove();
-    //     button.remove();
-    // } else {
-    //     window.alert("Tabela não existe");
-    // }
+    if (div) {
+        div.remove();
+        table.remove();
+        button.remove();
+    } else {
+        window.alert("Tabela não existe");
+    }
 }
