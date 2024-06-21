@@ -58,7 +58,6 @@ function criarTabela() {
 
         thead.appendChild(tr);
         tr.appendChild(th);
-
     }
 }
 
