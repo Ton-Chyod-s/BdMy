@@ -71,7 +71,7 @@ function criarTabela() {
         var select = document.createElement("select");
         select.id = "select";
         select.name = "select";
-        select.options[0] = new Option("Serial", "id");
+        select.options[0] = new Option("Serial", "Serial");
         select.options[1] = new Option("text", "text");
         
 
