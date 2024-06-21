@@ -1,5 +1,5 @@
 function criarTabela(cabeçalho, conteudo) {
-    var divTabela = document.querySelector("#id-tabela");
+    var divTabela = document.querySelector("#tabela");
 
     var tabela = document.createElement("table");
     var thead = document.createElement("thead");
