@@ -18,18 +18,32 @@ function criarTabela() {
         var tabela = divTabela.querySelector("#" + nomeTabela);
     
         var headerCells = tabela.querySelectorAll("thead th");
+
         headerCells.forEach(function(th) {
             if (th.textContent === cabecalho) {
                 window.alert("Nome do cabeçalho já existe");
             }
         });
 
+        var tbody = tabela.querySelector("tbody");
+        var trBody = document.createElement("tr");
+        var td = document.createElement("td");
+
+        
+        trBody.textContent = "Your row content";
+        td.textContent = "Your cell content";
+
+        
+        trBody.appendChild(td);
+        tbody.appendChild(trBody);
+
+
+        
 
 
 
+ 
 
-
-        return;
     } else {
         // Create the table if it doesn't exist
         var tabela = document.createElement("table");
@@ -59,6 +73,7 @@ function criarTabela() {
         td.textContent = "Cell Content";
         trBody.appendChild(td);
         tbody.appendChild(trBody);
+
     }
 }
 
