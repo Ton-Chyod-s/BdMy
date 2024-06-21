@@ -115,16 +115,39 @@ function novaPlanilha() {
 
     var button = document.createElement("button");
     button.textContent = "Criar Tabela";
+    button.id = "criar";
     button.onclick = criarTabela;
 
     div.appendChild(inputNomeTabela);
     div.appendChild(inputcabecalhoTabela);
     div.appendChild(button);
     
-    var buttonConfirmar = document.createElement("button");
-    buttonConfirmar.textContent = "Confirmar";
-    buttonConfirmar.onclick = confirmarPlanilha;
-
-    div.appendChild(buttonConfirmar);
+    var confimar = document.createElement("button");
+    confimar.textContent = "Confirmar";
+    confimar.id = "confirmar";
+    confimar.onclick = confirmarPlanilha;
+    div.appendChild(confimar);
     
+}
+
+function confirmarPlanilha() {
+    var div = document.querySelector("#id-tabela");
+    var inputNomeTabela = document.querySelector("#nomeTabela");
+    var inputcabecalhoTabela = document.querySelector("#cabecalhoTabela");
+    var button = document.querySelector("#criar");
+    var confimar = document.querySelector("#confirmar");
+
+    inputNomeTabela.remove();
+    inputcabecalhoTabela.remove();
+    button.remove();
+    confimar.remove();
+
+    var button = document.createElement("input");
+    button.type = "button";
+    button.value = "Criar";
+    button.id = "criar";
+    button.onclick = novaPlanilha;
+
+    div.appendChild(button);
+
 }
