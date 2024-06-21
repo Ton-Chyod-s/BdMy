@@ -5,7 +5,6 @@ function criarTabela(cabeçalho, conteudo) {
     
     function hasTable(div, tableId) {
         if (div) {
-            // Ensure the tableId is used as an ID selector
             var table = div.querySelector("#" + tableId);
             return table !== null;
         }
