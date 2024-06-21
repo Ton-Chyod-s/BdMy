@@ -22,28 +22,23 @@ function criarTabela() {
         headerCells.forEach(function(th) {
             if (th.textContent === cabecalho) {
                 window.alert("Nome do cabeçalho já existe");
+            } else {
+                var tbody = tabela.querySelector("tbody");
+                var trBody = document.createElement("tr");
+                var td = document.createElement("td");
+
+                trBody.textContent = cabecalho;
+                td.textContent = "Your cell content";
+
+                trBody.appendChild(td);
+                tbody.appendChild(trBody);
             }
         });
 
-        var tbody = tabela.querySelector("tbody");
-        var trBody = document.createElement("tr");
-        var td = document.createElement("td");
-
-        
-        trBody.textContent = "Your row content";
-        td.textContent = "Your cell content";
-
-        
-        trBody.appendChild(td);
-        tbody.appendChild(trBody);
-
-
         
 
 
-
- 
-
+    
     } else {
         // Create the table if it doesn't exist
         var tabela = document.createElement("table");
