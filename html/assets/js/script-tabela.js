@@ -2,7 +2,7 @@
 function criarTabela() {  
     var divTabela = document.querySelector("#tabelas");
     var nomeTabela = document.querySelector("#nomeTabela").value;
-    var cabecalho = document.querySelector("#cabecalhoTabela").value; // Define the specific header text to check
+    var cabecalho = document.querySelector("#cabecalhoTabela").value; 
 
     function hasTable(div, tableId) {
         if (div && tableId !== "") {
@@ -23,51 +23,40 @@ function criarTabela() {
             if (th.textContent === cabecalho) {
                 window.alert("Nome do cabeçalho já existe");
             } else {
-                var tbody = tabela.querySelector("tbody");
-                var trBody = document.createElement("tr");
-                var td = document.createElement("td");
+                console.log(th.textContent);
+                var thead = tabela.querySelector("thead");
+                var tr = document.createElement("tr");
+                var th = document.createElement("th");
+                th.id = cabecalho;
 
-                trBody.textContent = cabecalho;
-                td.textContent = "Your cell content";
+                th.textContent = cabecalho;
 
-                trBody.appendChild(td);
-                tbody.appendChild(trBody);
+                thead.appendChild(tr);
+                tr.appendChild(th);
+                
+                exit;
             }
         });
 
-        
-
-
-    
+        return;
     } else {
-        // Create the table if it doesn't exist
         var tabela = document.createElement("table");
-        tabela.id = nomeTabela; // Set the ID of the table to nomeTabela
+        tabela.id = nomeTabela;
         var thead = document.createElement("thead");
         var tbody = document.createElement("tbody");
 
-        // Append the table elements to the correct parents
         divTabela.appendChild(tabela);
         tabela.appendChild(thead);
         tabela.appendChild(tbody);
 
-        // Create a table row and header
         var tr = document.createElement("tr");
         var th = document.createElement("th");
+        th.id = cabecalho;
 
-        // Set content for the header
-        th.textContent = cabecalho; // Use the specified header text
+        th.textContent = cabecalho; 
 
-        // Append the row and header to the table head
         thead.appendChild(tr);
         tr.appendChild(th);
-
-        // Optionally, create a second row and a table data cell
-        var trBody = document.createElement("tr");
-        var td = document.createElement("td");
-        td.textContent = "Cell Content";
-        trBody.appendChild(td);
-        tbody.appendChild(trBody);
 
     }
 }
