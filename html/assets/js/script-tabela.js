@@ -41,6 +41,25 @@ function addHeaderCell(tabela, cabecalho) {
 }
 
 function createNewTable(divTabela, nomeTabela, cabecalho) {
+    document.addEventListener("DOMContentLoaded", function() {
+        // Define the table name
+        const nomeTabela = "Example Table Name";
+
+        // Select the <select> element
+        const select = document.querySelector("#select");
+
+        // Create a new <option> element
+        const option = document.createElement("option");
+
+        // Set the value and text content
+        option.value = "exemplo";
+        option.textContent = nomeTabela;
+
+        // Append the new option to the select element
+        select.appendChild(option);
+       
+    });
+
     const headerDiv = document.createElement("header");
     headerDiv.id = `${nomeTabela}-header`;
     divTabela.appendChild(headerDiv);
@@ -72,6 +91,40 @@ function createNewTable(divTabela, nomeTabela, cabecalho) {
     divTabela.appendChild(tabela);
 }
 
+/* 
+function createNewTable(divTabela, nomeTabela, cabecalho) {
+    const headerDiv = document.createElement("header");
+    headerDiv.id = `${nomeTabela}-header`;
+    divTabela.appendChild(headerDiv);
+
+    const label = document.createElement("label");
+    label.textContent = `Tabela: ${nomeTabela}`;
+    headerDiv.appendChild(label);
+
+    const buttonDel = document.createElement("input");
+    buttonDel.type = "button";
+    buttonDel.value = "Deletar";
+    buttonDel.onclick = deletarTabela;
+    buttonDel.id = `${nomeTabela}-button`;
+    headerDiv.appendChild(buttonDel);
+
+    const tabela = document.createElement("table");
+    tabela.id = nomeTabela;
+    const thead = document.createElement("thead");
+    const tbody = document.createElement("tbody");
+
+    const headerRow = document.createElement("tr");
+    const th = document.createElement("th");
+    th.textContent = cabecalho;
+    headerRow.appendChild(th);
+    thead.appendChild(headerRow);
+
+    tabela.appendChild(thead);
+    tabela.appendChild(tbody);
+    divTabela.appendChild(tabela);
+}
+*/
+
 function deletarTabela() {
     const divTabela = document.querySelector("#tabelas");
     const nome = this.previousSibling.textContent.split(": ")[1];
@@ -86,6 +139,9 @@ function deletarTabela() {
 }
 
 function novaPlanilha() {
+    const select = document.querySelector("#select");
+    select.remove();
+
     const criarBtn = document.querySelector("#criar");
     const exemploBtn = document.querySelector("#exemplo");
     if (criarBtn) criarBtn.remove();
@@ -117,6 +173,7 @@ function novaPlanilha() {
     confirmarButton.id = "confirmar";
     confirmarButton.onclick = confirmarPlanilha;
     div.appendChild(confirmarButton);
+    
 }
 
 function confirmarPlanilha() {
