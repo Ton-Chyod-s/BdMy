@@ -38,6 +38,7 @@ function criarTabela() {
     }
 }
 
+
 function hasTable(div, tableId) {
     return div.querySelector(`#${tableId}`) !== null;
 }
@@ -131,7 +132,7 @@ function novaPlanilha() {
     inputcabecalhoTabela.placeholder = "Nome do Cabeçalho";
 
     const criarButton = document.createElement("input");
-    criarButton.value = "Criar Tabela";
+    criarButton.value = "Adicionar Cabeçalho";
     criarButton.type = "button";
     criarButton.id = "criar";
     criarButton.onclick = criarTabela;
@@ -146,6 +147,13 @@ function novaPlanilha() {
     confirmarButton.id = "confirmar";
     confirmarButton.onclick = confirmarPlanilha;
     div.appendChild(confirmarButton);
+
+    const adicionarTabela = document.createElement("input");
+    adicionarTabela.value = "Adicionar Tabela";
+    adicionarTabela.type = "button";
+    adicionarTabela.id = "adicionar";
+    // adicionarTabela.onclick = novaPlanilha;
+    div.appendChild(adicionarTabela);
 }
 
 function confirmarPlanilha() {
