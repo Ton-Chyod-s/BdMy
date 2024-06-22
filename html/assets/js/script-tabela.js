@@ -135,8 +135,25 @@ function confirmarPlanilha() {
     const exemploButton = document.createElement("input");
     exemploButton.type = "button";
     exemploButton.value = "Exemplo";
-    exemploButton.onclick = deletarTabela;
+    exemploButton.onclick = tabelaExemplo;
     exemploButton.id = "exemplo";
     div.appendChild(criarButton);
     div.appendChild(exemploButton);
+}
+
+function tabelaExemplo() {
+    const div = document.querySelector("#tabelas");
+    const nomeTabela = "exemplo";
+    const cabecalho = "id-exemplo";
+    const cabecalho2 = "nome-exemplo";
+
+    if (hasTable(div, nomeTabela)) {
+        const tabela = div.querySelector("#" + nomeTabela);
+        if (!headerExists(tabela, cabecalho)) {
+            addHeaderCell(tabela, cabecalho);
+            
+        }
+    } else {
+        createNewTable(div, nomeTabela, cabecalho);
+    }
 }
