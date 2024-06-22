@@ -162,6 +162,7 @@ function confirmarPlanilha() {
     div.querySelector("#cabecalhoTabela").remove();
     div.querySelector("#criar").remove();
     div.querySelector("#confirmar").remove();
+    div.querySelector("#adicionar").remove();
 
     const criarButton = document.createElement("input");
     criarButton.type = "button";
@@ -181,22 +182,30 @@ function confirmarPlanilha() {
 function tabelaExemplo() {
     const div = document.querySelector("#tabelas");
     const nomeTabela = "exemplo";
-    const cabecalho = "id-exemplo";
-    const cabecalho2 = "nome-exemplo";
+    const headers = [
+        "id-exemplo",
+        "nome",
+        "idade",
+        "sexo",
+        "cidade",
+        "estado",
+        "pais",
+    ];
 
     if (hasTable(div, nomeTabela)) {
         const tabela = div.querySelector("#" + nomeTabela);
-        if (!headerExists(tabela, cabecalho)) {
-            addHeaderCell(tabela, cabecalho);
-        }
-        if (!headerExists(tabela, cabecalho2)) {
-            addHeaderCell(tabela, cabecalho2);
-        }
+        headers.forEach(header => {
+            if (!headerExists(tabela, header)) {
+                addHeaderCell(tabela, header);
+            }
+        });
     } else {
-        createNewTable(div, nomeTabela, cabecalho);
-        addHeaderCell(div.querySelector(`#${nomeTabela}`), cabecalho2);
+        createNewTable(div, nomeTabela, headers[0]); 
+        headers.slice(1).forEach(header => { 
+            addHeaderCell(div.querySelector(`#${nomeTabela}`), header);
+        });
 
-        // Adicionar o nome da nova tabela ao select
+        
         const tabelaSelect = document.getElementById('select');
         const option = document.createElement("option");
         option.value = nomeTabela;
