@@ -1,108 +1,86 @@
-
-function criarTabela() {  
-    var divTabela = document.querySelector("#tabelas");
-    var nomeTabela = document.querySelector("#nomeTabela").value;
-    var cabecalho = document.querySelector("#cabecalhoTabela").value; 
+function criarTabela() {
+    const divTabela = document.querySelector("#tabelas");
+    let nomeTabela = document.querySelector("#nomeTabela").value;
+    const cabecalho = document.querySelector("#cabecalhoTabela").value;
 
     nomeTabela = nomeTabela.replace(" ", "_");
-    
-    function hasTable(div, tableId) {
-        if (div && tableId !== "") {
-            var table = div.querySelector(`#${tableId}`);
-            return table !== null;
+
+    if (hasTable(divTabela, nomeTabela)) {
+        const tabela = divTabela.querySelector("#" + nomeTabela);
+        if (!headerExists(tabela, cabecalho)) {
+            addHeaderCell(tabela, cabecalho);
         }
-        return false;
-    }
-
-    var isExistTable = hasTable(divTabela, nomeTabela);
-
-    if ( isExistTable ) {
-        var tabela = divTabela.querySelector("#" + nomeTabela);
-        var headerCells = tabela.querySelectorAll("thead th");
-        
-        var headerExists = false; 
-
-        headerCells.forEach(function(th) {
-            if (th.textContent === cabecalho) {
-                window.alert("Nome do cabeçalho já existe");
-                headerExists = true;
-                return; 
-            }
-        });
-
-        if (!headerExists) {
-            var thead = tabela.querySelector("thead");
-            var tr = document.createElement("tr");
-            var th = document.createElement("th");
-            th.id = cabecalho;
-            th.textContent = cabecalho;
-
-            tr.appendChild(th);
-            thead.appendChild(tr);
-        }
-
-        return;
     } else {
-        var div = document.createElement("header");
-        div.id = `${nomeTabela}-header`;
-        divTabela.appendChild(div);
-
-        var label = document.createElement("label");
-        label.textContent = `tabela:${nomeTabela}`;
-        div.appendChild(label);
-
-        var buttonDel = document.createElement("input");
-        buttonDel.type = "button";
-        buttonDel.value = "Deletar";
-        buttonDel.onclick = deletarTabela;
-        buttonDel.id = `${nomeTabela}-button`;
-        div.appendChild(buttonDel);
-        
-        var tabela = document.createElement("table");
-        tabela.id = nomeTabela;
-        var thead = document.createElement("thead");
-        var tbody = document.createElement("tbody");
-
-        divTabela.appendChild(tabela);
-        tabela.appendChild(thead);
-        tabela.appendChild(tbody);
-
-        var tr = document.createElement("tr");
-        var select = document.createElement("select");
-        select.id = "select";
-        select.name = "select";
-        select.options[0] = new Option("Serial", "Serial");
-        select.options[1] = new Option("text", "text");
-        
-
-
-        var th = document.createElement("th");
-        th.id = cabecalho;
-        
-        if (cabecalho === "" || cabecalho.includes("id")) {
-            th.textContent = `id-${nomeTabela}`; 
-        } else {
-            th.textContent = cabecalho; 
-        }
-    
-        thead.appendChild(tr);
-        tr.appendChild(select);
-        tr.appendChild(th);
-
-        return;
+        createNewTable(divTabela, nomeTabela, cabecalho);
     }
 }
 
+function hasTable(div, tableId) {
+    return div.querySelector(`#${tableId}`) !== null;
+}
+
+function headerExists(tabela, cabecalho) {
+    const headerCells = tabela.querySelectorAll("thead th");
+    for (const th of headerCells) {
+        if (th.textContent === cabecalho) {
+            window.alert("Nome do cabeçalho já existe");
+            return true;
+        }
+    }
+    return false;
+}
+
+function addHeaderCell(tabela, cabecalho) {
+    const thead = tabela.querySelector("thead");
+    const tr = document.createElement("tr");
+    const th = document.createElement("th");
+    th.id = cabecalho;
+    th.textContent = cabecalho;
+    tr.appendChild(th);
+    thead.appendChild(tr);
+}
+
+function createNewTable(divTabela, nomeTabela, cabecalho) {
+    const div = document.createElement("header");
+    div.id = `${nomeTabela}-header`;
+    divTabela.appendChild(div);
+
+    const label = document.createElement("label");
+    label.textContent = `tabela:${nomeTabela}`;
+    div.appendChild(label);
+
+    const buttonDel = document.createElement("input");
+    buttonDel.type = "button";
+    buttonDel.value = "Deletar";
+    buttonDel.onclick = deletarTabela;
+    buttonDel.id = `${nomeTabela}-button`;
+    div.appendChild(buttonDel);
+
+    const tabela = document.createElement("table");
+    tabela.id = nomeTabela;
+    const thead = document.createElement("thead");
+    const tbody = document.createElement("tbody");
+
+    divTabela.appendChild(tabela);
+    tabela.appendChild(thead);
+    tabela.appendChild(tbody);
+
+    const tr = document.createElement("tr");
+    const th = document.createElement("th");
+    th.id = cabecalho;
+    th.textContent = cabecalho ? cabecalho : `id-${nomeTabela}`;
+    tr.appendChild(th);
+    thead.appendChild(tr);
+}
+
 function deletarTabela() {
+    const divTabela = document.querySelector("#tabelas");
+    const nome = this.previousSibling.textContent.split(":")[1];
+    const div = divTabela.querySelector(`#${nome}-header`);
+    const table = divTabela.querySelector(`#${nome}`);
+    const button = divTabela.querySelector(`#${nome}-button`);
 
-    var divTabela = document.querySelector("#tabelas");
-    var nome = this.previousSibling.textContent.split(":")[1];
-
-    var div = divTabela.querySelector(`#${nome}-header`);
-    var table = divTabela.querySelector(`#${nome}`);
-    var button = divTabela.querySelector(`#${nome}-button`);
-
-    if (div) {
+    if (div && table && button) {
         div.remove();
         table.remove();
         button.remove();
@@ -112,20 +90,20 @@ function deletarTabela() {
 }
 
 function novaPlanilha() {
-    var criar = document.querySelector("#criar");
+    const criar = document.querySelector("#criar");
     criar.remove();
 
-    var div = document.querySelector("#id-tabela");
+    const div = document.querySelector("#id-tabela");
 
-    var inputNomeTabela = document.createElement("input");
+    const inputNomeTabela = document.createElement("input");
     inputNomeTabela.id = "nomeTabela";
     inputNomeTabela.placeholder = "Nome da Tabela";
 
-    var inputcabecalhoTabela = document.createElement("input");
+    const inputcabecalhoTabela = document.createElement("input");
     inputcabecalhoTabela.id = "cabecalhoTabela";
     inputcabecalhoTabela.placeholder = "Nome do Cabeçalho";
 
-    var button = document.createElement("input");
+    const button = document.createElement("input");
     button.value = "Criar Tabela";
     button.type = "button";
     button.id = "criar";
@@ -134,34 +112,27 @@ function novaPlanilha() {
     div.appendChild(inputNomeTabela);
     div.appendChild(inputcabecalhoTabela);
     div.appendChild(button);
-    
-    var confimar = document.createElement("input");
-    confimar.value = "Confirmar";
-    confimar.type = "button";
-    confimar.id = "confirmar";
-    confimar.onclick = confirmarPlanilha;
-    div.appendChild(confimar);
-    
+
+    const confirmar = document.createElement("input");
+    confirmar.value = "Confirmar";
+    confirmar.type = "button";
+    confirmar.id = "confirmar";
+    confirmar.onclick = confirmarPlanilha;
+    div.appendChild(confirmar);
 }
 
 function confirmarPlanilha() {
-    var div = document.querySelector("#id-tabela");
-    var inputNomeTabela = document.querySelector("#nomeTabela");
-    var inputcabecalhoTabela = document.querySelector("#cabecalhoTabela");
-    var button = document.querySelector("#criar");
-    var confimar = document.querySelector("#confirmar");
+    const div = document.querySelector("#id-tabela");
+    document.querySelector("#nomeTabela").remove();
+    document.querySelector("#cabecalhoTabela").remove();
+    document.querySelector("#criar").remove();
+    document.querySelector("#confirmar").remove();
 
-    inputNomeTabela.remove();
-    inputcabecalhoTabela.remove();
-    button.remove();
-    confimar.remove();
-
-    var button = document.createElement("input");
+    const button = document.createElement("input");
     button.type = "button";
     button.value = "Criar";
     button.id = "criar";
     button.onclick = novaPlanilha;
 
     div.appendChild(button);
-
 }
