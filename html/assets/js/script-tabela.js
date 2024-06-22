@@ -1,10 +1,10 @@
 function criarTabela() {
     const divTabela = document.querySelector("#tabelas");
-    let nomeTabela = document.querySelector("#nomeTabela").value.trim().replace(" ", "_");
+    let nomeTabela = document.querySelector("#nomeTabela").value.trim().replace(/\s+/g, "_");
     const cabecalho = document.querySelector("#cabecalhoTabela").value.trim();
 
-    if (nomeTabela === "" || cabecalho === "") {
-        window.alert("Por favor, preencha todos os campos.");
+    if (nomeTabela === "") {
+        window.alert("Por favor, preencha todos o nome da tabela.");
         return;
     }
 
@@ -12,9 +12,29 @@ function criarTabela() {
         const tabela = divTabela.querySelector("#" + nomeTabela);
         if (!headerExists(tabela, cabecalho)) {
             addHeaderCell(tabela, cabecalho);
-        }
+            return;
+        } 
     } else {
-        createNewTable(divTabela, nomeTabela, cabecalho);
+        if (!cabecalho.includes('id')) {
+            const newCabecalho = 'id-' + nomeTabela.replace("s", "");
+            createNewTable(divTabela, nomeTabela, newCabecalho);
+
+            const tabela = divTabela.querySelector("#" + nomeTabela);
+            if (!headerExists(tabela, cabecalho)) {
+                addHeaderCell(tabela, cabecalho);
+                
+            } 
+
+        } else {
+            createNewTable(divTabela, nomeTabela, cabecalho);
+        }
+
+        // Adicionar o nome da nova tabela ao select
+        const tabelaSelect = document.getElementById('select');
+        const option = document.createElement("option");
+        option.value = nomeTabela;
+        option.text = nomeTabela;
+        tabelaSelect.appendChild(option);
     }
 }
 
@@ -41,25 +61,6 @@ function addHeaderCell(tabela, cabecalho) {
 }
 
 function createNewTable(divTabela, nomeTabela, cabecalho) {
-    document.addEventListener("DOMContentLoaded", function() {
-        // Define the table name
-        const nomeTabela = "Example Table Name";
-
-        // Select the <select> element
-        const select = document.querySelector("#select");
-
-        // Create a new <option> element
-        const option = document.createElement("option");
-
-        // Set the value and text content
-        option.value = "exemplo";
-        option.textContent = nomeTabela;
-
-        // Append the new option to the select element
-        select.appendChild(option);
-       
-    });
-
     const headerDiv = document.createElement("header");
     headerDiv.id = `${nomeTabela}-header`;
     divTabela.appendChild(headerDiv);
@@ -90,40 +91,6 @@ function createNewTable(divTabela, nomeTabela, cabecalho) {
     tabela.appendChild(tbody);
     divTabela.appendChild(tabela);
 }
-
-/* 
-function createNewTable(divTabela, nomeTabela, cabecalho) {
-    const headerDiv = document.createElement("header");
-    headerDiv.id = `${nomeTabela}-header`;
-    divTabela.appendChild(headerDiv);
-
-    const label = document.createElement("label");
-    label.textContent = `Tabela: ${nomeTabela}`;
-    headerDiv.appendChild(label);
-
-    const buttonDel = document.createElement("input");
-    buttonDel.type = "button";
-    buttonDel.value = "Deletar";
-    buttonDel.onclick = deletarTabela;
-    buttonDel.id = `${nomeTabela}-button`;
-    headerDiv.appendChild(buttonDel);
-
-    const tabela = document.createElement("table");
-    tabela.id = nomeTabela;
-    const thead = document.createElement("thead");
-    const tbody = document.createElement("tbody");
-
-    const headerRow = document.createElement("tr");
-    const th = document.createElement("th");
-    th.textContent = cabecalho;
-    headerRow.appendChild(th);
-    thead.appendChild(headerRow);
-
-    tabela.appendChild(thead);
-    tabela.appendChild(tbody);
-    divTabela.appendChild(tabela);
-}
-*/
 
 function deletarTabela() {
     const divTabela = document.querySelector("#tabelas");
@@ -133,15 +100,21 @@ function deletarTabela() {
     if (headerDiv && tabela) {
         headerDiv.remove();
         tabela.remove();
+
+        // Remover o nome da tabela do select
+        const tabelaSelect = document.getElementById('select');
+        for (const option of tabelaSelect.options) {
+            if (option.value === nome) {
+                option.remove();
+                break;
+            }
+        }
     } else {
         window.alert("Tabela não existe");
     }
 }
 
 function novaPlanilha() {
-    const select = document.querySelector("#select");
-    select.remove();
-
     const criarBtn = document.querySelector("#criar");
     const exemploBtn = document.querySelector("#exemplo");
     if (criarBtn) criarBtn.remove();
@@ -173,7 +146,6 @@ function novaPlanilha() {
     confirmarButton.id = "confirmar";
     confirmarButton.onclick = confirmarPlanilha;
     div.appendChild(confirmarButton);
-    
 }
 
 function confirmarPlanilha() {
@@ -208,9 +180,19 @@ function tabelaExemplo() {
         const tabela = div.querySelector("#" + nomeTabela);
         if (!headerExists(tabela, cabecalho)) {
             addHeaderCell(tabela, cabecalho);
-            
+        }
+        if (!headerExists(tabela, cabecalho2)) {
+            addHeaderCell(tabela, cabecalho2);
         }
     } else {
         createNewTable(div, nomeTabela, cabecalho);
+        addHeaderCell(div.querySelector(`#${nomeTabela}`), cabecalho2);
+
+        // Adicionar o nome da nova tabela ao select
+        const tabelaSelect = document.getElementById('select');
+        const option = document.createElement("option");
+        option.value = nomeTabela;
+        option.text = nomeTabela;
+        tabelaSelect.appendChild(option);
     }
 }
