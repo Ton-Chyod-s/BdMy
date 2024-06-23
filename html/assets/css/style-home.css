@@ -11,7 +11,6 @@ body {
 
 #cabecalhoSite {
     background: linear-gradient(to left, #344c64, #2B3F53);
-
     padding: 4px; 
     color: #fff;
     font-size: 1.0em;
@@ -26,19 +25,14 @@ body {
 
 #ladoEsquerdo {
     display: flex;
+    align-items: center;    /* Alinha os itens no centro verticalmente */
+    justify-content: center;/* Alinha os itens no centro horizontalmente */
     /* border: 1px solid #DEE2E6; */
-    width: auto; /* Ajuste para o conteúdo */
-    margin-left: 2%; /* Ajuste para melhor espaçamento */
+    width: 150px;  /* Defina a largura desejada */
 }
 
-#ladoDireito {
-    display: flex;
-    /* border: 1px solid #DEE2E6; */
-    width: auto; /* Ajuste para o conteúdo */
-    margin-right: 2%; /* Ajuste para melhor espaçamento */
-}
 
-#loginSenha a, #loginSenha button, #ladoEsquerdo a, #ladoEsquerdo button, #ladoDireito a, #ladoDireito button {
+#loginSenha a, #loginSenha button, #ladoEsquerdo a, #ladoEsquerdo button {
     margin-left: 10px; /* Espaço entre elementos */
 }
 
@@ -90,6 +84,9 @@ a {
     display: flex;
     align-items: center;    /* Alinha os itens no centro verticalmente */
     justify-content: center;/* Alinha os itens no centro horizontalmente */
+    /* border: 1px solid #DEE2E6; */
+    width: 235px;  /* Defina a largura desejada */
+    
 }
 
 
