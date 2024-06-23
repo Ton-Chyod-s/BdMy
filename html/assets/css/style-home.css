@@ -9,29 +9,90 @@ body {
     background-color: #fff;
 }
 
-header {
-    background: #292B2C;
-    color: #fff;
-    padding: 25px 0;
-    text-align: center;
-    font-size: 1.2em;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-}
-
 #cabecalhoSite {
     background: #2B3F53;
+    padding: 4px; 
     color: #fff;
-    padding: 25px 0;
-    text-align: center;
-    font-size: 1.2em;
+    font-size: 1.0em;
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
+    display: flex;
+    justify-content: space-between; /* Adiciona espaçamento entre os itens */
+    align-items: center; /* Centraliza verticalmente os itens */
 }
+
+#loginSenha {
+    display: flex;
+    border: 1px solid #DEE2E6;
+    width: auto; /* Ajuste para o conteúdo */
+    margin-right: 2%; /* Ajuste para melhor espaçamento */
+    
+ 
+}
+
+#ladoEsquerdo {
+    display: flex;
+    /* border: 1px solid #DEE2E6; */
+    width: auto; /* Ajuste para o conteúdo */
+    margin-left: 2%; /* Ajuste para melhor espaçamento */
+}
+
+#ladoDireito {
+    display: flex;
+    /* border: 1px solid #DEE2E6; */
+    width: auto; /* Ajuste para o conteúdo */
+    margin-right: 2%; /* Ajuste para melhor espaçamento */
+}
+
+#loginSenha a, #loginSenha button, #ladoEsquerdo a, #ladoEsquerdo button, #ladoDireito a, #ladoDireito button {
+    margin-left: 10px; /* Espaço entre elementos */
+}
+
+#cadastrar {
+    color: #fff;
+    text-align: center;
+    width: 100px;
+    margin: 1px;
+    border: 0.1px solid #fff;
+    border-radius: 15px;
+    padding: 5px 10px; /* Padding para melhor aparência */
+}
+
+#cadastrar:hover {
+    background-color: #fff;
+    color: #2B3F53;
+}
+
+#login {
+    padding-right: 15px;
+    text-decoration: none;  
+    color: inherit;
+}
+
+
+
+#cadastrar {
+    color: #fff;
+    text-align: center;
+    width: 100px;
+    margin: 1px;
+    border: 0.1px solid #fff;
+    border-radius: 15px;
+}
+
+#cadastrar:hover {
+    background-color: #fff;
+    color: #2B3F53;
+}
+
+#login {
+    padding-right: 15px;
+    text-decoration: none;  
+    color: inherit;
+}
+
 
 #menuSite {
     background: #F6FAFF;
