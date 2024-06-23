@@ -25,7 +25,7 @@ body {
 
 #loginSenha {
     display: flex;
-    border: 1px solid #DEE2E6;
+    /* border: 1px solid #DEE2E6; */
     width: auto; /* Ajuste para o conteúdo */
     margin-right: 2%; /* Ajuste para melhor espaçamento */
     
