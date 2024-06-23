@@ -2,18 +2,7 @@ const diacritics = require('diacritics');
 
 function criarTabela() {
     const divTabela = document.querySelector("#tabelas");
-    let nomeTabela = document.querySelector("#nomeTabela");
-
-    if (nomeTabela) {
-        if ( !isNaN(valor) ) {
-            document.querySelector("#nomeTabela").value.trim().replace(/\s+/g, "_");
-        } else {
-            document.querySelector("#select").value.trim().replace(/\s+/g, "_");
-        }
-    } else {
-        const select = document.querySelector("#select");
-        nomeTabela = select.options[select.selectedIndex].value;
-    }
+    let nomeTabela = document.querySelector("#nomeTabela").value.trim().replace(/\s+/g, "_");
 
     const cabecalho = document.querySelector("#cabecalhoTabela").value.trim();
 
@@ -93,9 +82,10 @@ function createNewTable(divTabela, nomeTabela, cabecalho) {
 
     const buttonDel = document.createElement("input");
     buttonDel.type = "button";
-    buttonDel.value = "Deletar";
+    buttonDel.value = "Deletar Planilha";
     buttonDel.onclick = deletarTabela;
     buttonDel.id = `${nomeTabela}-button`;
+    buttonDel.className = "delete";
     headerDiv.appendChild(buttonDel);
 
     const tabela = document.createElement("table");
@@ -162,19 +152,19 @@ function novaPlanilha() {
     div.appendChild(inputcabecalhoTabela);
     div.appendChild(criarButton);
 
-    const confirmarButton = document.createElement("input");
-    confirmarButton.value = "Confirmar";
-    confirmarButton.type = "button";
-    confirmarButton.id = "confirmar";
-    confirmarButton.onclick = confirmarPlanilha;
-    div.appendChild(confirmarButton);
-
     const adicionarTabela = document.createElement("input");
     adicionarTabela.value = "Adicionar Tabela";
     adicionarTabela.type = "button";
     adicionarTabela.id = "adicionar";
     adicionarTabela.onclick = nomeTabela;
     div.appendChild(adicionarTabela);
+
+    const confirmarButton = document.createElement("input");
+    confirmarButton.value = "Confirmar";
+    confirmarButton.type = "button";
+    confirmarButton.id = "confirmar";
+    confirmarButton.onclick = confirmarPlanilha;
+    div.appendChild(confirmarButton);
 }
 
 function nomeTabela() {

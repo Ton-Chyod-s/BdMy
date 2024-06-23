@@ -2,19 +2,57 @@
     display: flex;
 }
 
-/* Botão deletar */
+#button-crud {
+    align-items: center;
+}
+
+#button-crud input {
+    margin: 10px;
+    height: 25px;
+    width: 10%;
+    display: inline-flex;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+#button-crud input#button-update {
+    background-color: #8bc498;
+    color: white;
+}
+
+#button-crud input#button-delete {
+    background-color: #d9534f;
+    color: white;
+}
+
 header input,
 #nomeTabela,
 #cabecalhoTabela,
 #confirmar,
 #exemplo,
-input#criar {
+input#criar,
+#adicionar {
     margin: 10px;
     height: 25px;
     width: 15%;
     display: inline-block;
     border: 1px solid #ccc;
     box-sizing: border-box;
+}
+
+#confirmar {
+    background-color: #8bc498;
+    color: white;
+}
+
+#exemplo {
+    background-color: #0275D8;
+    color: white;
+}
+
+.delete {
+    background-color: #d9534f;
+    color: white;
 }
 
 table {
@@ -46,5 +84,14 @@ table tr, #exemplo tr {
     list-style-type: none;
     margin-right: 10px;
   
+}
+
+#select {
+    width: 8%;
+    height: 25px;
+    margin: 10px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
 }
 
