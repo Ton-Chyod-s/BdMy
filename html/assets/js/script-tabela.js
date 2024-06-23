@@ -212,7 +212,7 @@ function confirmarPlanilha() {
 
 function tabelaExemplo() {
     const div = document.querySelector("#tabelas");
-    const nomeTabela = "exemplo";
+    const nomeTabela = "tabelaExemplo";
     const headers = [
         "id-exemplo",
         "nome",

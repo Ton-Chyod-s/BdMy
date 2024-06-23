@@ -69,6 +69,10 @@ table tr, #exemplo tr {
     text-align: center;
 }
 
+#tabelaExemplo {
+    background-color: #e6e941;
+    color: #000000;
+}
 
 #menu {
     display: flex;
@@ -84,6 +88,13 @@ table tr, #exemplo tr {
     list-style-type: none;
     margin-right: 10px;
   
+}
+
+#menu-linha {       
+    box-sizing: border-box;
+    /* border: 1px solid #ccc; */
+    text-align: center;
+    margin-top: 0%;
 }
 
 #select {
