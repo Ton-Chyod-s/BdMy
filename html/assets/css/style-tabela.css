@@ -20,20 +20,31 @@ input#criar {
 table {
     width: 100%;
     margin-top: 10px;
-    display: inline-table;
-    border-radius: 5px;
-}
-
-table {
-    width: 100%;
-    margin-top: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
     box-sizing: border-box;
 }
 
-table tr {
+table tr, #exemplo tr {
     border: 1px solid #ccc;
     padding: 5px;
     text-align: center;
 }
+
+
+#menu {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center; 
+    margin-top: 0px;
+    width: 100%; 
+    height: 25px;
+    box-sizing: border-box;
+}
+
+#menu > input {
+    list-style-type: none;
+    margin-right: 10px;
+  
+}
+

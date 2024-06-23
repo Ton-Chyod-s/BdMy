@@ -1,6 +1,20 @@
+const diacritics = require('diacritics');
+
 function criarTabela() {
     const divTabela = document.querySelector("#tabelas");
-    let nomeTabela = document.querySelector("#nomeTabela").value.trim().replace(/\s+/g, "_");
+    let nomeTabela = document.querySelector("#nomeTabela");
+
+    if (nomeTabela) {
+        if ( !isNaN(valor) ) {
+            document.querySelector("#nomeTabela").value.trim().replace(/\s+/g, "_");
+        } else {
+            document.querySelector("#select").value.trim().replace(/\s+/g, "_");
+        }
+    } else {
+        const select = document.querySelector("#select");
+        nomeTabela = select.options[select.selectedIndex].value;
+    }
+
     const cabecalho = document.querySelector("#cabecalhoTabela").value.trim();
 
     if (nomeTabela === "") {
@@ -16,7 +30,7 @@ function criarTabela() {
         } 
     } else {
         if (!cabecalho.includes('id')) {
-            const newCabecalho = 'id-' + nomeTabela.replace("s", "");
+            const newCabecalho = 'id-' + nomeTabela.replace(/s\b/g, "");
             createNewTable(divTabela, nomeTabela, newCabecalho);
 
             const tabela = divTabela.querySelector("#" + nomeTabela);
@@ -36,6 +50,9 @@ function criarTabela() {
         option.text = nomeTabela;
         tabelaSelect.appendChild(option);
     }
+    const nome = document.querySelector("#nomeTabela");
+    if (nome) nome.remove();
+
 }
 
 
@@ -57,6 +74,10 @@ function headerExists(tabela, cabecalho) {
 function addHeaderCell(tabela, cabecalho) {
     const thead = tabela.querySelector("thead tr");
     const th = document.createElement("th");
+    if (cabecalho.includes(' ')) {
+        cabecalho = cabecalho.replace(/\s+/g, "-");
+    }
+
     th.textContent = cabecalho;
     thead.appendChild(th);
 }
@@ -152,8 +173,28 @@ function novaPlanilha() {
     adicionarTabela.value = "Adicionar Tabela";
     adicionarTabela.type = "button";
     adicionarTabela.id = "adicionar";
-    // adicionarTabela.onclick = novaPlanilha;
+    adicionarTabela.onclick = nomeTabela;
     div.appendChild(adicionarTabela);
+}
+
+function nomeTabela() {
+    const div = document.querySelector("#id-tabela");
+    const adicionarCabecalho = document.querySelector("#criar");
+    const confirmar = document.querySelector("#confirmar");
+    const adicionar = document.querySelector("#adicionar");
+    const nomeTabela = document.querySelector("#nomeTabela");
+    const cabecalho = document.querySelector("#cabecalhoTabela");
+    const select = document.querySelector("#select");
+
+    // if (nomeTabela) nomeTabela.remove();
+    // if (select) select.remove();
+    
+    const inputNomeTabela = document.createElement("input");
+    inputNomeTabela.id = "nomeTabela";
+    inputNomeTabela.placeholder = "Nome da Tabela";
+
+    div.appendChild(inputNomeTabela);
+
 }
 
 function confirmarPlanilha() {
