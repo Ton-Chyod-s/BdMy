@@ -106,3 +106,9 @@ table tr, #exemplo tr {
     box-sizing: border-box;
 }
 
+h4 {
+    margin-bottom: -10px;
+    display: inline-block;
+    color: #000000;
+}                                                                   
+

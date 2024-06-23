@@ -244,3 +244,12 @@ function tabelaExemplo() {
         tabelaSelect.appendChild(option);
     }
 }
+
+function atualizarLinha() {
+    window.alert("Sem planilha no banco de dados");
+}
+
+function deletarLinha() {
+    window.alert("Sem planilha no banco de dados");
+}
+
