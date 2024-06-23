@@ -92,8 +92,8 @@ function removeLinks() {
 
 menuSite.addEventListener("mouseenter", function() {
     addLink(buttonMenu, "Home", "index.html");
-    addLink(buttonMenu1, "Lista de Clientes", "index.html");
-    addLink(buttonMenu2, "Myframe", "index.html");
+    addLink(buttonMenu1, "Analise de Dados", "index.html");
+    addLink(buttonMenu2, "Adicionar ao Banco", "index.html");
     addLink(buttonMenu3, "Banco de Dados", "index.html");
 });
 

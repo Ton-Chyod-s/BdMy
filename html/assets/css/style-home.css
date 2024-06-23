@@ -23,15 +23,6 @@ body {
     align-items: center; /* Centraliza verticalmente os itens */
 }
 
-#loginSenha {
-    display: flex;
-    /* border: 1px solid #DEE2E6; */
-    width: auto; /* Ajuste para o conteúdo */
-    margin-right: 2%; /* Ajuste para melhor espaçamento */
-    
- 
-}
-
 #ladoEsquerdo {
     display: flex;
     /* border: 1px solid #DEE2E6; */
@@ -46,7 +37,7 @@ body {
     margin-right: 2%; /* Ajuste para melhor espaçamento */
 }
 
-#loginSenha a, #loginSenha button, #ladoEsquerdo a, #ladoEsquerdo button, #ladoDireito a, #ladoDireito button {
+#loginSenha a, #ladoEsquerdo a, #ladoEsquerdo button, #ladoDireito a, #ladoDireito button {
     margin-left: 10px; /* Espaço entre elementos */
 }
 
@@ -65,14 +56,16 @@ body {
     color: #2B3F53;
 }
 
+/* Estilos para o elemento de login */
 #login {
     padding-right: 15px;
-    text-decoration: none;  
-    color: inherit;
+    text-decoration: none;  /* Remove sublinhado */
+    color: inherit;         /* Mantém a cor herdada do elemento pai */
+    text-align: center;     /* Alinha o texto ao centro */
+    display: inline-block;  /* Torna o elemento inline-block para facilitar o alinhamento */
 }
 
-
-
+/* Estilos para o elemento de cadastro */
 #cadastrar {
     color: #fff;
     text-align: center;
@@ -80,7 +73,25 @@ body {
     margin: 1px;
     border: 0.1px solid #fff;
     border-radius: 15px;
+    display: inline-block;  /* Torna o elemento inline-block para facilitar o alinhamento */
+    text-decoration: none;  /* Remove sublinhado */
 }
+
+/* Estilos globais para links */
+a {
+    color: inherit;         /* Mantém a cor herdada do elemento pai */
+    text-decoration: none;  /* Remove sublinhado */
+}
+
+/* Estilos para alinhar os elementos de login e cadastro */
+.container {
+    display: flex;
+    align-items: center;    /* Alinha os itens no centro verticalmente */
+    justify-content: center;/* Alinha os itens no centro horizontalmente */
+    /* border: 1px solid #DEE2E6; */
+
+}
+
 
 #cadastrar:hover {
     background-color: #fff;
@@ -92,7 +103,6 @@ body {
     text-decoration: none;  
     color: inherit;
 }
-
 
 #menuSite {
     background: #F6FAFF;
