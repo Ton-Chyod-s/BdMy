@@ -41,11 +41,14 @@ menuSite.addEventListener("mouseenter", function() {
     menuSite.style.padding = "78px";
     menuSite.style.transition = "0.2s";
     menuSite.style.marginTop = "-72px";
-    
+
     abrirMenu(buttonMenu);
     abrirMenu(buttonMenu1);
     abrirMenu(buttonMenu2);
     abrirMenu(buttonMenu3);
+
+    const corpoSite = document.getElementById("corpoSite");
+    corpoSite.style.filter = "blur(3px)";
 
 });
 
@@ -54,6 +57,8 @@ menuSite.addEventListener("scroll", function() {
 });
 
 menuSite.addEventListener("mouseleave", function() {
+    const corpoSite = document.getElementById("corpoSite");
+    corpoSite.style.filter = "blur(0px)";
     menuSite.style.padding = "8px";
     menuSite.style.transition = "0.2s";
     menuSite.style.marginTop = "0px";
