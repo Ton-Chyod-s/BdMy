@@ -5,8 +5,8 @@ var buttonMenu2 = document.getElementById("buttonMenu2");
 var buttonMenu3 = document.getElementById("buttonMenu3");
 
 function abrirMenu(td) {
-    td.style.marginLeft = "-48px";
-    td.style.width = "138px";
+    td.style.marginLeft = "-68px";
+    td.style.width = "178px";
     td.style.transition = "0.1s";
     
 }
@@ -38,9 +38,9 @@ function corMenuClick(td) {
 }
 
 menuSite.addEventListener("mouseenter", function() {
-    menuSite.style.padding = "58px";
+    menuSite.style.padding = "78px";
     menuSite.style.transition = "0.2s";
-    menuSite.style.marginTop = "-50px";
+    menuSite.style.marginTop = "-72px";
     
     abrirMenu(buttonMenu);
     abrirMenu(buttonMenu1);
