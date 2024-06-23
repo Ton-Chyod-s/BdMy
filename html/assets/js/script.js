@@ -101,3 +101,16 @@ menuSite.addEventListener("mouseleave", function() {
     removeLinks();
 });
 
+function deletarIframe() {
+    var iframe = document.getElementById("iframe");
+    iframe.remove();
+}
+
+function criarIframe() {
+    var iframe = document.createElement("iframe");
+    iframe.id = "iframe";
+    iframe.src = "https://www.google.com.br";
+    iframe.style.width = "100%";
+    iframe.style.height = "100%";
+    document.body.appendChild(iframe);
+}
