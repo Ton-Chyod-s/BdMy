@@ -189,3 +189,13 @@ footer {
     background-color: #F8F9FA;
     border-top: 1px solid #DEE2E6;
 }
+
+#infoSite {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border: 1px solid #DEE2E6;
+    transition: margin-left 0.5s;
+    color: #292B2C;
+    
+}
