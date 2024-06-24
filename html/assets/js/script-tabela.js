@@ -11,13 +11,7 @@ function criarTabela() {
         nomeTabela = document.querySelector("#select").value.trim().replace(/\s+/g, "_");
     }
 
-
     const cabecalho = document.querySelector("#cabecalhoTabela").value.trim();
-
-    console.log(divTabela);
-    console.log(nomeTabela);
-    console.log(select);
-    console.log(cabecalho);
 
     if (nomeTabela === "") {
         window.alert("Por favor, preencha todos o nome da tabela.");
@@ -204,9 +198,19 @@ function novaPlanilha() {
     sql.value = "Criar Bd";
     sql.type = "button";
     sql.id = "button-sql";
-
+   
     div.appendChild(divSql);
     divSql.appendChild(sql);
+
+    sql.onclick = function() {
+        const divTabelas = document.getElementsByName("table");
+
+        for (let i = 0; i < divTabelas.length; i++) {
+            console.log(divTabelas[i]);
+        }
+        
+    }
+//*[@id="tabelas"]
 }
 
 function nomeTabela() {
