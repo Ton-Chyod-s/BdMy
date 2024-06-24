@@ -1,8 +1,22 @@
+let cont = 0;
+
 function criarTabela() {
     const divTabela = document.querySelector("#tabelas");
-    let nomeTabela = document.querySelector("#nomeTabela").value.trim().replace(/\s+/g, "_");
-
+    let nomeTabela;
+    
+    if (cont === 0) {
+        nomeTabela = document.querySelector("#nomeTabela").value.trim().replace(/\s+/g, "_");
+        cont++;
+    } else {
+        nomeTabela = document.querySelector("#select").value.trim().replace(/\s+/g, "_");
+    }
+    
     const cabecalho = document.querySelector("#cabecalhoTabela").value.trim();
+
+    console.log(divTabela);
+    console.log(nomeTabela);
+    console.log(select);
+    console.log(cabecalho);
 
     if (nomeTabela === "") {
         window.alert("Por favor, preencha todos o nome da tabela.");
@@ -37,8 +51,10 @@ function criarTabela() {
         option.text = nomeTabela;
         tabelaSelect.appendChild(option);
     }
+
     const nome = document.querySelector("#nomeTabela");
     if (nome) nome.remove();
+
     const divNomeTabela = document.querySelector("#divNomeTabela");
     divNomeTabela.style.width = "0%";
     divNomeTabela.style.border = "none";
@@ -130,6 +146,7 @@ function deletarTabela() {
 }
 
 function novaPlanilha() {
+    cont = 0;
     const criarBtn = document.querySelector("#criar");
     const exemploBtn = document.querySelector("#exemplo");
     if (criarBtn) criarBtn.remove();
@@ -200,6 +217,7 @@ function nomeTabela() {
 
     divNomeTabela.appendChild(inputNomeTabela);
 
+    cont = 0;
 }
 
 function confirmarPlanilha() {
