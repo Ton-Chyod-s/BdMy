@@ -84,7 +84,6 @@ a {
     position: fixed;
     top: 45px; /* Adjust based on header height */
     left: 0;
-    
 }
 
 #menu {
@@ -116,7 +115,6 @@ a {
     padding-bottom: none;
     transition: margin-left 0.5s;
     color: #292B2C;
-
     /* border: 1px solid #DEE2E6; */
 }
 
@@ -132,7 +130,6 @@ main {
 #corpoSite {
     transition: margin-left 0.5s;
     color: #292B2C;
-
     /* border: 1px solid #DEE2E6; */
 }
 
