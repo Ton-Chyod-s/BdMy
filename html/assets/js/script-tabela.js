@@ -60,7 +60,6 @@ function criarTabela() {
     const divNomeTabela = document.querySelector("#divNomeTabela");
     divNomeTabela.style.width = "0%";
     divNomeTabela.style.border = "none";
-
 }
 
 
@@ -197,6 +196,17 @@ function novaPlanilha() {
     confirmarButton.id = "confirmar";
     confirmarButton.onclick = confirmarPlanilha;
     div.appendChild(confirmarButton);
+
+    const divSql = document.createElement("div");
+    divSql.id = "divsql";
+
+    const sql = document.createElement("input");
+    sql.value = "Criar Bd";
+    sql.type = "button";
+    sql.id = "button-sql";
+
+    div.appendChild(divSql);
+    divSql.appendChild(sql);
 }
 
 function nomeTabela() {
@@ -224,7 +234,9 @@ function confirmarPlanilha() {
     const div = document.querySelector("#id-tabela");
     const divNomeTabela = div.querySelector("#divNomeTabela");
     const divCabecalhoTabela = div.querySelector("#divCabecalhoTabela");
-    
+    const divSql = div.querySelector("#divsql");
+
+    divSql.remove();
     div.querySelector("#criar").remove();
     div.querySelector("#adicionar").remove();
     div.querySelector("#confirmar").remove();

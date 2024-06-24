@@ -129,3 +129,17 @@ h4 {
     color: #000000;
 }                                                                   
 
+#divsql {
+    margin: 10px;
+    height: 25px;
+    width: 20%;
+    display: flex;
+    box-sizing: border-box;
+
+    /* border: 1px solid #ccc; */
+}
+
+#button-sql {
+    text-align: center;
+    margin-left: 55%;
+}
