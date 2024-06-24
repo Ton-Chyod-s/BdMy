@@ -1,4 +1,6 @@
 let cont = 0;
+let tabelas = [];
+let colunas = [];
 
 function criarTabela() {
     const divTabela = document.querySelector("#tabelas");
@@ -102,6 +104,8 @@ function createNewTable(divTabela, nomeTabela, cabecalho) {
 
     const tabela = document.createElement("table");
     tabela.id = nomeTabela;
+    tabela.name = "table";
+    tabela.className = "table table-bordered table-hover";
     const thead = document.createElement("thead");
     const tbody = document.createElement("tbody");
 
@@ -203,25 +207,25 @@ function novaPlanilha() {
     divSql.appendChild(sql);
 
     sql.onclick = function() {
-        const divTabelas = document.getElementsByName("table");
+        const divTabelas = document.getElementsByClassName("table table-bordered table-hover");
 
         for (let i = 0; i < divTabelas.length; i++) {
-            console.log(divTabelas[i]);
+            const tabela = divTabelas[i];
+            const headers = tabela.querySelectorAll("tr th");
+            for (let j = 0; j < headers.length; j++) {
+                const header = headers[j];
+                colunas.push(header.textContent);
+                tabelas.push(colunas);
+
+                console.log(tabelas);
+            }
+            colunas = [];
+
         }
-        
     }
-//*[@id="tabelas"]
 }
 
 function nomeTabela() {
-    const div = document.querySelector("#id-tabela");
-    const adicionarCabecalho = document.querySelector("#criar");
-    const confirmar = document.querySelector("#confirmar");
-    const adicionar = document.querySelector("#adicionar");
-    const nomeTabela = document.querySelector("#nomeTabela");
-    const cabecalho = document.querySelector("#cabecalhoTabela");
-    const select = document.querySelector("#select");
-    
     const divNomeTabela = document.querySelector("#divNomeTabela");
     divNomeTabela.style.width = "15%";
 
