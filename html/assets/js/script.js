@@ -121,17 +121,18 @@ function criarIframe(text) {
     iframe.name = "formulario";
     
     if (text === "Home") {
-        iframe.remove();
+        iframe.src = "";
+
     } else if (text === "Analise de Dados") {
-        iframe.transition = "0.3s";
         iframe.src = "analise.html";
+
     } else if (text === "Adicionar ao Banco") {
-        iframe.transition = "0.3s";
         iframe.src = "formulario.html";
+
     } else if (text === "Banco de Dados") {
-        iframe.transition = "0.3s";
         iframe.src = "tabela.html";
     }
+
     iframe.style.width = "100%";
     iframe.style.height = "600px";
     section.appendChild(iframe);
