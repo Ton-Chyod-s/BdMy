@@ -50,6 +50,7 @@ function criarTabela() {
         const option = document.createElement("option");
         option.value = nomeTabela;
         option.text = nomeTabela;
+        option.selected = true;
         tabelaSelect.appendChild(option);
     }
 
