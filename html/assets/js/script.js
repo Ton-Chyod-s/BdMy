@@ -8,14 +8,12 @@ function abrirMenu(td) {
     td.style.marginLeft = "-68px";
     td.style.width = "178px";
     td.style.transition = "0.1s";
-    
 }
 
 function fecharMenu(td) {
     td.style.width = "41px";
     td.style.marginLeft = "0px";
     td.style.transition = "0.3s";
-    
 }
 
 function corMenuEnter(td) {
@@ -46,7 +44,6 @@ menuSite.addEventListener("mouseenter", function() {
     abrirMenu(buttonMenu1);
     abrirMenu(buttonMenu2);
     abrirMenu(buttonMenu3);
-
 });
 
 menuSite.addEventListener("scroll", function() {
@@ -63,7 +60,6 @@ menuSite.addEventListener("mouseleave", function() {
     fecharMenu(buttonMenu1);
     fecharMenu(buttonMenu2);
     fecharMenu(buttonMenu3);
-
 });
 
 corMenuEnter(buttonMenu);
@@ -76,8 +72,6 @@ corMenuEnter(buttonMenu3);
 corMenuLeave(buttonMenu3);
 
 corMenuClick(buttonMenu);
-
-
 
 menuSite.addEventListener("mouseenter", function() {
     addLink(buttonMenu, "Home");
