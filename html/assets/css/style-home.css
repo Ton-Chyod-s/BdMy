@@ -75,19 +75,20 @@ a {
 
 
 #menuSite {
-    background: #F6FAFF;
+    background: #F6FAFF;;
     padding: 8px;
     font-size: 1em;
     width: 25px;
     height: 100%;
     position: fixed;
-    top: 50px; /* Adjust based on header height */
+    top: 45px; /* Adjust based on header height */
     left: 0;
     
 }
 
 #menu {
-    margin: -8px;
+    margin-top: -8px;
+    margin-left: -9px;
 }
 
 #buttonMenu, #buttonMenu1, #buttonMenu2, #buttonMenu3 {
