@@ -10,7 +10,8 @@ function criarTabela() {
     } else {
         nomeTabela = document.querySelector("#select").value.trim().replace(/\s+/g, "_");
     }
-    
+
+
     const cabecalho = document.querySelector("#cabecalhoTabela").value.trim();
 
     console.log(divTabela);
@@ -58,8 +59,6 @@ function criarTabela() {
     const divNomeTabela = document.querySelector("#divNomeTabela");
     divNomeTabela.style.width = "0%";
     divNomeTabela.style.border = "none";
-
-
 
 }
 
