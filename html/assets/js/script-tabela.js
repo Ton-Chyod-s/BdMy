@@ -211,29 +211,23 @@ function novaPlanilha() {
 
 
         for (let i = 0; i < divTabelas.length; i++) {
+            let nomeTabela = divTabelas[i].id;
             const tabela = divTabelas[i];
             const headers = tabela.querySelectorAll("tr th");
             for (let j = 0; j < headers.length; j++) {
                 const header = headers[j];
-                for (let k = 0; k < header.length; k++) {
-                   console.log(header[k]);
-                }
                 
+                console.log(nomeTabela);
                 console.log(header.textContent);
 
                 // colunas.push(header.textContent);
                 // tabelas.push(colunas);
                
-
                 // console.log(tabelas);
-            
             }
             
             colunas = [];
-            break;
         }
-
-
     }
 }
 
