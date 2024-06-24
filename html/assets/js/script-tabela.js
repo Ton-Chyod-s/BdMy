@@ -218,9 +218,11 @@ function novaPlanilha() {
                 tabelas.push(colunas);
 
                 console.log(tabelas);
+            
             }
+            
             colunas = [];
-
+            break;
         }
     }
 }
