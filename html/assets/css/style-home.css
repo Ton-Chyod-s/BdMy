@@ -74,6 +74,7 @@ a {
 
 
 
+/* Menu lado esquerdo */
 #menuSite {
     background: #F6FAFF;;
     padding: 8px;
@@ -104,7 +105,22 @@ a {
 
 
 
+/* Texto antes do iframe */
+#infoSite {
+    margin-top: 48px; 
+    margin-left: 100px; 
+    margin-right: 50px;
+    margin-bottom: -20px;
+    justify-content: space-between;
+    padding: 10px;
+    padding-bottom: none;
+    transition: margin-left 0.5s;
+    color: #292B2C;
 
+    /* border: 1px solid #DEE2E6; */
+}
+
+/* Corpo site e iframe */
 main {
     margin-left: 100px; 
     padding: 20px;
@@ -126,6 +142,7 @@ main {
     box-shadow: 0 0 5px #e3e3e3;
 }
 
+/* Rodapé */
 footer {
     color: #292B2C;
     text-align: center;
@@ -134,19 +151,4 @@ footer {
     width: 100%;
     background-color: #F8F9FA;
     border-top: 1px solid #DEE2E6;
-}
-
-
-#infoSite {
-    margin-top: 48px; 
-    margin-left: 100px; 
-    margin-right: 50px;
-    margin-bottom: -20px;
-    justify-content: space-between;
-    padding: 10px;
-    padding-bottom: none;
-    transition: margin-left 0.5s;
-    color: #292B2C;
-
-    /* border: 1px solid #DEE2E6; */
 }
