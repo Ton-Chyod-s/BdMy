@@ -13,7 +13,7 @@ function abrirMenu(td) {
 function fecharMenu(td) {
     td.style.width = "41px";
     td.style.marginLeft = "0px";
-    td.style.transition = "0.3s";
+    td.style.transition = "0.2s";
 }
 
 function corMenuEnter(td) {
