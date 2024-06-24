@@ -209,19 +209,23 @@ function novaPlanilha() {
     sql.onclick = function() {
         const divTabelas = document.getElementsByClassName("table table-bordered table-hover");
 
-        
+
         for (let i = 0; i < divTabelas.length; i++) {
             const tabela = divTabelas[i];
             const headers = tabela.querySelectorAll("tr th");
             for (let j = 0; j < headers.length; j++) {
                 const header = headers[j];
-
-                if (!colunas.includes(header.textContent)) {
-                    colunas.push(header.textContent);
-                    tabelas.push(colunas);
+                for (let k = 0; k < header.length; k++) {
+                   console.log(header[k]);
                 }
+                
+                console.log(header.textContent);
 
-                console.log(tabelas);
+                // colunas.push(header.textContent);
+                // tabelas.push(colunas);
+               
+
+                // console.log(tabelas);
             
             }
             
