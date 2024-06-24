@@ -91,6 +91,12 @@ function addLink(button, text) {
     newLink.innerText = text;
     newLink.className = "dynamicLink";  // Changed to class name
     newLink.onclick = function() {
+        const iframe = document.getElementById("formulario")
+
+        if (iframe) {
+            iframe.remove();
+        }
+
         criarIframe(text);
     };
     button.appendChild(newLink);
@@ -107,7 +113,6 @@ menuSite.addEventListener("mouseleave", function() {
     removeLinks();
 });
 
-
 function criarIframe(text) {
     var iframe = document.createElement("iframe");
     const section = document.getElementById("formSection");
@@ -116,12 +121,15 @@ function criarIframe(text) {
     iframe.name = "formulario";
     
     if (text === "Home") {
-        iframe.src = "index.html";
+        iframe.remove();
     } else if (text === "Analise de Dados") {
+        iframe.transition = "0.3s";
         iframe.src = "analise.html";
     } else if (text === "Adicionar ao Banco") {
+        iframe.transition = "0.3s";
         iframe.src = "formulario.html";
     } else if (text === "Banco de Dados") {
+        iframe.transition = "0.3s";
         iframe.src = "tabela.html";
     }
     iframe.style.width = "100%";
