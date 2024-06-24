@@ -31,11 +31,6 @@ body {
     width: 150px;  /* Defina a largura desejada */
 }
 
-
-#loginSenha a, #loginSenha button, #ladoEsquerdo a, #ladoEsquerdo button {
-    margin-left: 10px; /* Espaço entre elementos */
-}
-
 #cadastrar {
     color: #fff;
     background-color: #456585;
@@ -47,11 +42,6 @@ body {
     padding: 5px 10px; /* Padding para melhor aparência */
 }
 
-#cadastrar:hover {
-    background-color: #fff;
-    color: #2B3F53;
-}
-
 /* Estilos para o elemento de login */
 #login {
     padding-right: 15px;
@@ -61,18 +51,10 @@ body {
     display: inline-block;  /* Torna o elemento inline-block para facilitar o alinhamento */
 }
 
-/* Estilos para o elemento de cadastro */
-#cadastrar {
-    color: #fff;
-    text-align: center;
-    width: 100px;
-    margin: 1px;
-    border: 0.1px solid #fff;
-    border-radius: 15px;
-    display: inline-block;  /* Torna o elemento inline-block para facilitar o alinhamento */
-    text-decoration: none;  /* Remove sublinhado */
+#cadastrar:hover {
+    background-color: #fff;
+    color: #2B3F53;
 }
-
 /* Estilos globais para links */
 a {
     color: inherit;         /* Mantém a cor herdada do elemento pai */
@@ -90,16 +72,7 @@ a {
 }
 
 
-#cadastrar:hover {
-    background-color: #fff;
-    color: #2B3F53;
-}
 
-#login {
-    padding-right: 15px;
-    text-decoration: none;  
-    color: inherit;
-}
 
 #menuSite {
     background: #F6FAFF;
@@ -110,18 +83,11 @@ a {
     position: fixed;
     top: 50px; /* Adjust based on header height */
     left: 0;
-    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+    
 }
 
-#corpoSite {
-    transition: margin-left 0.5s;
-    color: #292B2C;
-}
-
-#formulario {
-    border: 1px solid #DEE2E6;
-    border-radius: 5px;
-    box-shadow: 0 0 5px #e3e3e3;
+#menu {
+    margin: -8px;
 }
 
 #buttonMenu, #buttonMenu1, #buttonMenu2, #buttonMenu3 {
@@ -135,49 +101,28 @@ a {
     background-color: #F6FAFF;
 }
 
-#menu {
-    margin: -8px;
 
-}
+
 
 main {
-    margin-left: 100px; /* Adjust based on menu width */
+    margin-left: 100px; 
     padding: 20px;
-    margin-top: 80px; /* Adjust based on header height */
+    margin-top: 1px; 
     margin-right: 50px;
     transition: margin-left 0.5s;
 }
 
-form {
-    margin-top: 20px;
-    padding: 20px;
+#corpoSite {
+    transition: margin-left 0.5s;
+    color: #292B2C;
+
+    /* border: 1px solid #DEE2E6; */
+}
+
+#formulario {
     border: 1px solid #DEE2E6;
     border-radius: 5px;
     box-shadow: 0 0 5px #e3e3e3;
-}
-
-form input, form select, form textarea, form button {
-    display: block;
-    width: 100%;
-    margin-bottom: 15px;
-    padding: 10px;
-    border: 1px solid #DEE2E6;
-    border-radius: 5px;
-}
-
-form button {
-    background-color: #28A745;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-}
-
-form button:hover {
-    background-color: #218838;
-}
-
-form button:active {
-    background-color: #1E7E34;
 }
 
 footer {
@@ -190,12 +135,17 @@ footer {
     border-top: 1px solid #DEE2E6;
 }
 
+
 #infoSite {
-    display: flex;
+    margin-top: 48px; 
+    margin-left: 100px; 
+    margin-right: 50px;
+    margin-bottom: -20px;
     justify-content: space-between;
     padding: 10px;
-    border: 1px solid #DEE2E6;
+    padding-bottom: none;
     transition: margin-left 0.5s;
     color: #292B2C;
-    
+
+    /* border: 1px solid #DEE2E6; */
 }
