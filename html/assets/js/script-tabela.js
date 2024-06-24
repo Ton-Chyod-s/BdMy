@@ -1,5 +1,3 @@
-const diacritics = require('diacritics');
-
 function criarTabela() {
     const divTabela = document.querySelector("#tabelas");
     let nomeTabela = document.querySelector("#nomeTabela").value.trim().replace(/\s+/g, "_");
@@ -41,6 +39,11 @@ function criarTabela() {
     }
     const nome = document.querySelector("#nomeTabela");
     if (nome) nome.remove();
+    const divNomeTabela = document.querySelector("#divNomeTabela");
+    divNomeTabela.style.width = "0%";
+    divNomeTabela.style.border = "none";
+
+
 
 }
 
@@ -134,22 +137,34 @@ function novaPlanilha() {
 
     const div = document.querySelector("#id-tabela");
 
+    const divNomeTabela = document.createElement("div");
+    divNomeTabela.id = "divNomeTabela";
     const inputNomeTabela = document.createElement("input");
     inputNomeTabela.id = "nomeTabela";
     inputNomeTabela.placeholder = "Nome da Tabela";
 
+    const divCabecalhoTabela = document.createElement("div");
+    divCabecalhoTabela.id = "divCabecalhoTabela";
     const inputcabecalhoTabela = document.createElement("input");
     inputcabecalhoTabela.id = "cabecalhoTabela";
     inputcabecalhoTabela.placeholder = "Nome do Cabeçalho";
 
+    
     const criarButton = document.createElement("input");
     criarButton.value = "Adicionar Cabeçalho";
     criarButton.type = "button";
     criarButton.id = "criar";
     criarButton.onclick = criarTabela;
 
-    div.appendChild(inputNomeTabela);
-    div.appendChild(inputcabecalhoTabela);
+    div.appendChild(divNomeTabela);
+    divNomeTabela.appendChild(inputNomeTabela);
+
+    // div.appendChild(inputNomeTabela);
+    //div.appendChild(inputcabecalhoTabela);
+
+    div.appendChild(divCabecalhoTabela);
+    divCabecalhoTabela.appendChild(inputcabecalhoTabela);
+
     div.appendChild(criarButton);
 
     const adicionarTabela = document.createElement("input");
@@ -175,25 +190,27 @@ function nomeTabela() {
     const nomeTabela = document.querySelector("#nomeTabela");
     const cabecalho = document.querySelector("#cabecalhoTabela");
     const select = document.querySelector("#select");
-
-    // if (nomeTabela) nomeTabela.remove();
-    // if (select) select.remove();
     
+    const divNomeTabela = document.querySelector("#divNomeTabela");
+    divNomeTabela.style.width = "15%";
+
     const inputNomeTabela = document.createElement("input");
     inputNomeTabela.id = "nomeTabela";
     inputNomeTabela.placeholder = "Nome da Tabela";
 
-    div.appendChild(inputNomeTabela);
+    divNomeTabela.appendChild(inputNomeTabela);
 
 }
 
 function confirmarPlanilha() {
     const div = document.querySelector("#id-tabela");
-    div.querySelector("#nomeTabela").remove();
-    div.querySelector("#cabecalhoTabela").remove();
+    const divNomeTabela = div.querySelector("#divNomeTabela");
+    const divCabecalhoTabela = div.querySelector("#divCabecalhoTabela");
+    
     div.querySelector("#criar").remove();
-    div.querySelector("#confirmar").remove();
     div.querySelector("#adicionar").remove();
+    div.querySelector("#confirmar").remove();
+    div.querySelector("#cabecalhoTabela").remove();
 
     const criarButton = document.createElement("input");
     criarButton.type = "button";
@@ -208,6 +225,9 @@ function confirmarPlanilha() {
     exemploButton.id = "exemplo";
     div.appendChild(criarButton);
     div.appendChild(exemploButton);
+    divNomeTabela.remove();
+    divCabecalhoTabela.remove();
+
 }
 
 function tabelaExemplo() {
