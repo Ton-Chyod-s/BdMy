@@ -77,11 +77,22 @@ corMenuLeave(buttonMenu3);
 
 corMenuClick(buttonMenu);
 
-function addLink(button, text, href) {
+
+
+menuSite.addEventListener("mouseenter", function() {
+    addLink(buttonMenu, "Home");
+    addLink(buttonMenu1, "Analise de Dados");
+    addLink(buttonMenu2, "Adicionar ao Banco");
+    addLink(buttonMenu3, "Banco de Dados");
+});
+
+function addLink(button, text) {
     var newLink = document.createElement("a");
     newLink.innerText = text;
     newLink.className = "dynamicLink";  // Changed to class name
-    newLink.href = href;
+    newLink.onclick = function() {
+        criarIframe(text);
+    };
     button.appendChild(newLink);
 }
 
@@ -92,27 +103,28 @@ function removeLinks() {
     });
 }
 
-menuSite.addEventListener("mouseenter", function() {
-    addLink(buttonMenu, "Home", "index.html");
-    addLink(buttonMenu1, "Analise de Dados", "index.html");
-    addLink(buttonMenu2, "Adicionar ao Banco", "index.html");
-    addLink(buttonMenu3, "Banco de Dados", "index.html");
-});
-
 menuSite.addEventListener("mouseleave", function() {
     removeLinks();
 });
 
-function deletarIframe() {
-    var iframe = document.getElementById("iframe");
-    iframe.remove();
-}
 
-function criarIframe() {
+function criarIframe(text) {
     var iframe = document.createElement("iframe");
-    iframe.id = "iframe";
-    iframe.src = "https://www.google.com.br";
+    const section = document.getElementById("formSection");
+
+    iframe.id = "formulario";
+    iframe.name = "formulario";
+    
+    if (text === "Home") {
+        iframe.src = "index.html";
+    } else if (text === "Analise de Dados") {
+        iframe.src = "analise.html";
+    } else if (text === "Adicionar ao Banco") {
+        iframe.src = "formulario.html";
+    } else if (text === "Banco de Dados") {
+        iframe.src = "tabela.html";
+    }
     iframe.style.width = "100%";
-    iframe.style.height = "100%";
-    document.body.appendChild(iframe);
+    iframe.style.height = "600px";
+    section.appendChild(iframe);
 }
