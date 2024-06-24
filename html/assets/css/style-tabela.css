@@ -80,12 +80,6 @@ table {
     box-sizing: border-box;
 }
 
-table tr, #exemplo tr {
-    border: 1px solid #ccc;
-    padding: 5px;
-    text-align: center;
-}
-
 #tabelaExemplo {
     background-color: #e6e941;
     color: #000000;
@@ -123,12 +117,7 @@ table tr, #exemplo tr {
     box-sizing: border-box;
 }
 
-h4 {
-    margin-bottom: -10px;
-    display: inline-block;
-    color: #000000;
-}                                                                   
-
+                                                              
 #divsql {
     margin: 10px;
     height: 25px;
